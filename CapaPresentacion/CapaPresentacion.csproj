@@ -51,8 +51,62 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAuditoria.Designer.cs">
+      <DependentUpon>FrmAuditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLugar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLugar.Designer.cs">
+      <DependentUpon>FrmLugar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmNotaPeso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmNotaPeso.Designer.cs">
+      <DependentUpon>FrmNotaPeso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmProductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmProductor.Designer.cs">
+      <DependentUpon>FrmProductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MDIMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MDIMenuPrincipal.Designer.cs">
+      <DependentUpon>MDIMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmAuditoria.resx">
+      <DependentUpon>FrmAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLugar.resx">
+      <DependentUpon>FrmLugar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmNotaPeso.resx">
+      <DependentUpon>FrmNotaPeso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmProductor.resx">
+      <DependentUpon>FrmProductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MDIMenuPrincipal.resx">
+      <DependentUpon>MDIMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +115,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -74,6 +129,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Funciones\" />
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\FondoMDI.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
