@@ -1,3 +1,6 @@
+
+-----------------------	PROCEDIMIENTOS ALMACENADOS PRODUCTOR --------------------------
+
 --CREATE PROCEDURE Sp_Guardar_Productor
 --	@IdProductor nvarchar(5),
 --	@Nombre varchar(20),
@@ -75,3 +78,61 @@
 --		WHERE IdProductor = @IdProductor
 --	END
 --GO
+
+
+-----------------------	PROCEDIMIENTOS ALMACENADOS USUARIO --------------------------
+
+--CREATE PROCEDURE [dbo].[Sp_Guardar_Usuario]
+--	@Usuario varchar(20),
+--	@Contrasena varchar(500),
+--	@Estado bit,
+--	@Administrador bit
+--AS
+--	BEGIN
+--	  SET NOCOUNT OFF
+--		INSERT INTO Usuario(Usuario, Contrasena, Estado ,Administrador)
+--		VALUES(@Usuario, @Contrasena, @Estado,@Administrador)
+--	END
+--GO
+
+--alter table Usuario alter column Contrasena varchar(500)
+
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_Todo_Usuario]
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT *
+--		FROM Usuario 
+--	END
+--GO
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_UnUsuario]
+--	@IdUsuario int
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT  *
+--		FROM Usuario
+--		WHERE IdUsuario = @IdUsuario
+--	END
+--GO
+
+
+CREATE PROCEDURE [dbo].[Sp_Actualizar_Usuario]
+	@Id_Usuario int,
+	@Usuario varchar(20),
+	@Contrasena varchar(500),
+	@Estado bit,
+	@Administrador bit
+AS
+	BEGIN
+		SET NOCOUNT OFF
+		UPDATE Usuario
+		SET Usuario = @Usuario, 
+			Contrasena = @Contrasena,  
+			Estado = @Estado,
+			Administrador = @Administrador
+		WHERE IdUsuario = @Id_Usuario
+	END
+GO

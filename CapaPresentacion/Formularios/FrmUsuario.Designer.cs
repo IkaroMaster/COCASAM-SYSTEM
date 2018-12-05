@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,15 +46,25 @@
             this.pBxCancelar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pBxNuevo = new System.Windows.Forms.PictureBox();
-            this.gBxDatos = new System.Windows.Forms.GroupBox();
-            this.cBoSexo = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtApellidoProductor = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNombreProductor = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.gcDatosUsuario = new DevExpress.XtraGrid.GridControl();
+            this.gvDatosUsuario = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContrasena = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcDatos = new DevExpress.XtraEditors.GroupControl();
+            this.chkAdministrador = new DevExpress.XtraEditors.CheckEdit();
+            this.chkEstado = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtContrasena = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIdUsuario = new DevExpress.XtraEditors.TextEdit();
+            this.colAdministrador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -61,7 +73,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).BeginInit();
-            this.gBxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatosUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).BeginInit();
+            this.gcDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAdministrador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,7 +94,7 @@
             this.panel1.Controls.Add(this.txtIdProductor);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 79);
+            this.panel1.Size = new System.Drawing.Size(1125, 79);
             this.panel1.TabIndex = 19;
             // 
             // pictureBox1
@@ -119,7 +141,7 @@
             this.gBxControles.Controls.Add(this.label6);
             this.gBxControles.Controls.Add(this.pBxNuevo);
             this.gBxControles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxControles.Location = new System.Drawing.Point(28, 312);
+            this.gBxControles.Location = new System.Drawing.Point(224, 346);
             this.gBxControles.Name = "gBxControles";
             this.gBxControles.Size = new System.Drawing.Size(413, 124);
             this.gBxControles.TabIndex = 18;
@@ -187,6 +209,7 @@
             this.pBxActualizar.Size = new System.Drawing.Size(57, 58);
             this.pBxActualizar.TabIndex = 4;
             this.pBxActualizar.TabStop = false;
+            this.pBxActualizar.Click += new System.EventHandler(this.pBxActualizar_Click);
             // 
             // pBxGuardar
             // 
@@ -198,6 +221,7 @@
             this.pBxGuardar.Size = new System.Drawing.Size(57, 58);
             this.pBxGuardar.TabIndex = 2;
             this.pBxGuardar.TabStop = false;
+            this.pBxGuardar.Click += new System.EventHandler(this.pBxGuardar_Click);
             // 
             // pBxCancelar
             // 
@@ -231,108 +255,244 @@
             this.pBxNuevo.TabIndex = 0;
             this.pBxNuevo.TabStop = false;
             // 
-            // gBxDatos
+            // gcDatosUsuario
             // 
-            this.gBxDatos.Controls.Add(this.cBoSexo);
-            this.gBxDatos.Controls.Add(this.checkBox1);
-            this.gBxDatos.Controls.Add(this.label11);
-            this.gBxDatos.Controls.Add(this.txtApellidoProductor);
-            this.gBxDatos.Controls.Add(this.label3);
-            this.gBxDatos.Controls.Add(this.txtNombreProductor);
-            this.gBxDatos.Controls.Add(this.label4);
-            this.gBxDatos.Controls.Add(this.label5);
-            this.gBxDatos.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxDatos.Location = new System.Drawing.Point(28, 86);
-            this.gBxDatos.Name = "gBxDatos";
-            this.gBxDatos.Size = new System.Drawing.Size(413, 220);
-            this.gBxDatos.TabIndex = 17;
-            this.gBxDatos.TabStop = false;
-            this.gBxDatos.Text = "Datos";
+            this.gcDatosUsuario.ContextMenuStrip = this.contextMenuStrip1;
+            gridLevelNode2.RelationName = "Level1";
+            this.gcDatosUsuario.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.gcDatosUsuario.Location = new System.Drawing.Point(383, 85);
+            this.gcDatosUsuario.MainView = this.gvDatosUsuario;
+            this.gcDatosUsuario.Name = "gcDatosUsuario";
+            this.gcDatosUsuario.Size = new System.Drawing.Size(517, 255);
+            this.gcDatosUsuario.TabIndex = 153;
+            this.gcDatosUsuario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDatosUsuario});
             // 
-            // cBoSexo
+            // gvDatosUsuario
             // 
-            this.cBoSexo.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cBoSexo.FormattingEnabled = true;
-            this.cBoSexo.Location = new System.Drawing.Point(187, 115);
-            this.cBoSexo.Name = "cBoSexo";
-            this.cBoSexo.Size = new System.Drawing.Size(206, 27);
-            this.cBoSexo.TabIndex = 11;
+            this.gvDatosUsuario.ColumnPanelRowHeight = 26;
+            this.gvDatosUsuario.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdUsuario,
+            this.colUsuario,
+            this.colContrasena,
+            this.colEstado,
+            this.colAdministrador});
+            this.gvDatosUsuario.GridControl = this.gcDatosUsuario;
+            this.gvDatosUsuario.Name = "gvDatosUsuario";
+            this.gvDatosUsuario.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gvDatosUsuario.OptionsBehavior.Editable = false;
+            this.gvDatosUsuario.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gvDatosUsuario.OptionsFind.AlwaysVisible = true;
+            this.gvDatosUsuario.OptionsFind.FindNullPrompt = "Buscar aquí";
+            this.gvDatosUsuario.OptionsView.ShowFooter = true;
+            this.gvDatosUsuario.OptionsView.ShowGroupPanel = false;
+            this.gvDatosUsuario.RowHeight = 22;
             // 
-            // checkBox1
+            // colIdUsuario
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(186, 153);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.colIdUsuario.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colIdUsuario.AppearanceCell.Options.UseFont = true;
+            this.colIdUsuario.AppearanceCell.Options.UseTextOptions = true;
+            this.colIdUsuario.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colIdUsuario.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.colIdUsuario.AppearanceHeader.Options.UseFont = true;
+            this.colIdUsuario.AppearanceHeader.Options.UseTextOptions = true;
+            this.colIdUsuario.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIdUsuario.Caption = "Id Usuario";
+            this.colIdUsuario.FieldName = "IdUsuario";
+            this.colIdUsuario.Name = "colIdUsuario";
+            this.colIdUsuario.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Usuario = {0}", "{0}")});
+            this.colIdUsuario.Width = 149;
             // 
-            // label11
+            // colUsuario
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(127, 149);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 19);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Socio:";
+            this.colUsuario.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colUsuario.AppearanceCell.Options.UseFont = true;
+            this.colUsuario.AppearanceCell.Options.UseTextOptions = true;
+            this.colUsuario.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colUsuario.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.colUsuario.AppearanceHeader.Options.UseFont = true;
+            this.colUsuario.AppearanceHeader.Options.UseTextOptions = true;
+            this.colUsuario.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colUsuario.Caption = "Usuario";
+            this.colUsuario.FieldName = "Usuario";
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.Visible = true;
+            this.colUsuario.VisibleIndex = 0;
+            this.colUsuario.Width = 206;
             // 
-            // txtApellidoProductor
+            // colContrasena
             // 
-            this.txtApellidoProductor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoProductor.Location = new System.Drawing.Point(185, 77);
-            this.txtApellidoProductor.Name = "txtApellidoProductor";
-            this.txtApellidoProductor.Size = new System.Drawing.Size(208, 27);
-            this.txtApellidoProductor.TabIndex = 7;
+            this.colContrasena.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colContrasena.AppearanceCell.Options.UseFont = true;
+            this.colContrasena.AppearanceCell.Options.UseTextOptions = true;
+            this.colContrasena.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colContrasena.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.colContrasena.AppearanceHeader.Options.UseFont = true;
+            this.colContrasena.AppearanceHeader.Options.UseTextOptions = true;
+            this.colContrasena.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colContrasena.Caption = "Contraseña";
+            this.colContrasena.FieldName = "Contraseña";
+            this.colContrasena.Name = "colContrasena";
+            this.colContrasena.Width = 188;
             // 
-            // label3
+            // colEstado
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(107, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre:";
+            this.colEstado.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colEstado.AppearanceCell.Options.UseFont = true;
+            this.colEstado.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.colEstado.AppearanceHeader.Options.UseFont = true;
+            this.colEstado.AppearanceHeader.Options.UseTextOptions = true;
+            this.colEstado.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colEstado.Caption = "Activo";
+            this.colEstado.FieldName = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.Visible = true;
+            this.colEstado.VisibleIndex = 1;
+            this.colEstado.Width = 215;
             // 
-            // txtNombreProductor
+            // gcDatos
             // 
-            this.txtNombreProductor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProductor.Location = new System.Drawing.Point(185, 37);
-            this.txtNombreProductor.Name = "txtNombreProductor";
-            this.txtNombreProductor.Size = new System.Drawing.Size(208, 27);
-            this.txtNombreProductor.TabIndex = 6;
+            this.gcDatos.Controls.Add(this.chkAdministrador);
+            this.gcDatos.Controls.Add(this.chkEstado);
+            this.gcDatos.Controls.Add(this.labelControl3);
+            this.gcDatos.Controls.Add(this.txtContrasena);
+            this.gcDatos.Controls.Add(this.labelControl2);
+            this.gcDatos.Controls.Add(this.txtUsuario);
+            this.gcDatos.Controls.Add(this.labelControl1);
+            this.gcDatos.Controls.Add(this.txtIdUsuario);
+            this.gcDatos.Location = new System.Drawing.Point(4, 85);
+            this.gcDatos.Name = "gcDatos";
+            this.gcDatos.Size = new System.Drawing.Size(373, 255);
+            this.gcDatos.TabIndex = 152;
+            this.gcDatos.Text = "Datos del Usuario";
             // 
-            // label4
+            // chkAdministrador
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(106, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Apellido:";
+            this.chkAdministrador.Location = new System.Drawing.Point(185, 206);
+            this.chkAdministrador.Name = "chkAdministrador";
+            this.chkAdministrador.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAdministrador.Properties.Appearance.Options.UseFont = true;
+            this.chkAdministrador.Properties.Caption = "Administrador";
+            this.chkAdministrador.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkAdministrador.Size = new System.Drawing.Size(133, 23);
+            this.chkAdministrador.TabIndex = 193;
             // 
-            // label5
+            // chkEstado
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(131, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Sexo:";
+            this.chkEstado.Location = new System.Drawing.Point(54, 206);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEstado.Properties.Appearance.Options.UseFont = true;
+            this.chkEstado.Properties.Caption = "Activo";
+            this.chkEstado.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkEstado.Size = new System.Drawing.Size(71, 23);
+            this.chkEstado.TabIndex = 192;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(44, 94);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(56, 21);
+            this.labelControl3.TabIndex = 176;
+            this.labelControl3.Text = "Usuario";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.EditValue = "";
+            this.txtContrasena.Location = new System.Drawing.Point(108, 142);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Properties.Appearance.Options.UseFont = true;
+            this.txtContrasena.Properties.UseSystemPasswordChar = true;
+            this.txtContrasena.Size = new System.Drawing.Size(212, 28);
+            this.txtContrasena.TabIndex = 175;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(16, 145);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(84, 21);
+            this.labelControl2.TabIndex = 174;
+            this.labelControl2.Text = "Contraseña";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.EditValue = "";
+            this.txtUsuario.Location = new System.Drawing.Point(108, 91);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Properties.Appearance.Options.UseFont = true;
+            this.txtUsuario.Size = new System.Drawing.Size(212, 28);
+            this.txtUsuario.TabIndex = 173;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(26, 50);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(76, 21);
+            this.labelControl1.TabIndex = 172;
+            this.labelControl1.Text = "Id Usuario";
+            this.labelControl1.Visible = false;
+            // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.Location = new System.Drawing.Point(108, 47);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdUsuario.Properties.Appearance.Options.UseFont = true;
+            this.txtIdUsuario.Size = new System.Drawing.Size(181, 28);
+            this.txtIdUsuario.TabIndex = 171;
+            this.txtIdUsuario.Visible = false;
+            // 
+            // colAdministrador
+            // 
+            this.colAdministrador.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colAdministrador.AppearanceCell.Options.UseFont = true;
+            this.colAdministrador.AppearanceHeader.Options.UseFont = true;
+            this.colAdministrador.AppearanceHeader.Options.UseTextOptions = true;
+            this.colAdministrador.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colAdministrador.Caption = "Administrador";
+            this.colAdministrador.FieldName = "Administrador";
+            this.colAdministrador.Name = "colAdministrador";
+            this.colAdministrador.Visible = true;
+            this.colAdministrador.VisibleIndex = 2;
+            this.colAdministrador.Width = 76;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 457);
+            this.ClientSize = new System.Drawing.Size(912, 474);
+            this.Controls.Add(this.gcDatosUsuario);
+            this.Controls.Add(this.gcDatos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gBxControles);
-            this.Controls.Add(this.gBxDatos);
             this.Name = "FrmUsuario";
             this.Text = "FrmUsuario";
+            this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -343,8 +503,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).EndInit();
-            this.gBxDatos.ResumeLayout(false);
-            this.gBxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatosUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).EndInit();
+            this.gcDatos.ResumeLayout(false);
+            this.gcDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAdministrador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEstado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,14 +536,24 @@
         private System.Windows.Forms.PictureBox pBxCancelar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pBxNuevo;
-        private System.Windows.Forms.GroupBox gBxDatos;
-        private System.Windows.Forms.ComboBox cBoSexo;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtApellidoProductor;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombreProductor;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private DevExpress.XtraGrid.GridControl gcDatosUsuario;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDatosUsuario;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdUsuario;
+        private DevExpress.XtraGrid.Columns.GridColumn colUsuario;
+        private DevExpress.XtraGrid.Columns.GridColumn colContrasena;
+        private DevExpress.XtraGrid.Columns.GridColumn colEstado;
+        private DevExpress.XtraEditors.GroupControl gcDatos;
+        private DevExpress.XtraEditors.CheckEdit chkEstado;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit txtContrasena;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtUsuario;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtIdUsuario;
+        private DevExpress.XtraEditors.CheckEdit chkAdministrador;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdministrador;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }
