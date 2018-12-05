@@ -120,7 +120,7 @@
 
 
 CREATE PROCEDURE [dbo].[Sp_Actualizar_Usuario]
-	@Id_Usuario int,
+	@IdUsuario int,
 	@Usuario varchar(20),
 	@Contrasena varchar(500),
 	@Estado bit,
@@ -133,6 +133,6 @@ AS
 			Contrasena = @Contrasena,  
 			Estado = @Estado,
 			Administrador = @Administrador
-		WHERE IdUsuario = @Id_Usuario
+		WHERE IdUsuario = @IdUsuario
 	END
 GO
