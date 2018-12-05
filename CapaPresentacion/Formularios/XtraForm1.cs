@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class FrmNotaPeso : Form
+    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
     {
-        public FrmNotaPeso()
+        public XtraForm1()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -28,42 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.gBxControles = new System.Windows.Forms.GroupBox();
-            this.pBxRegresar = new System.Windows.Forms.PictureBox();
+            this.pbxRegresar = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pBxActualizar = new System.Windows.Forms.PictureBox();
-            this.pBxGuardar = new System.Windows.Forms.PictureBox();
-            this.pBxCancelar = new System.Windows.Forms.PictureBox();
+            this.pbxActualizar = new System.Windows.Forms.PictureBox();
+            this.pbxGuardar = new System.Windows.Forms.PictureBox();
+            this.pbxCancelar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pBxNuevo = new System.Windows.Forms.PictureBox();
+            this.pbxNuevo = new System.Windows.Forms.PictureBox();
             this.gBxDatos = new System.Windows.Forms.GroupBox();
-            this.cBoSexo = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtIdProductor = new System.Windows.Forms.TextBox();
+            this.chkSocio = new DevExpress.XtraEditors.CheckEdit();
+            this.lueSexo = new DevExpress.XtraEditors.LookUpEdit();
+            this.txtApellidoProductor = new DevExpress.XtraEditors.TextEdit();
+            this.txtNombreProductor = new DevExpress.XtraEditors.TextEdit();
+            this.txtIdProductor = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtApellidoProductor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNombreProductor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.cafeDBDataSet = new CapaPresentacion.CafeDBDataSet();
+            this.sexoTableAdapter2 = new CapaPresentacion.CafeDBDataSet1TableAdapters.SexoTableAdapter();
+            this.cafeDBDataSet11 = new CapaPresentacion.CafeDBDataSet1();
+            this.sexoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.sexoTableAdapter1 = new CapaPresentacion.CafeDBDataSetTableAdapters.SexoTableAdapter();
+            this.cafeDBDataSet1 = new CapaPresentacion.CafeDBDataSet();
+            this.sexoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sexoTableAdapter = new CapaPresentacion.CafeDBDataSetTableAdapters.SexoTableAdapter();
+            this.sexoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sexoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.gcDatosProductor = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gvDatosProductor = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdProductor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxRegresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxActualizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxGuardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxActualizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNuevo)).BeginInit();
             this.gBxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSocio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSexo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtApellidoProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatosProductor)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosProductor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,7 +108,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 79);
+            this.panel1.Size = new System.Drawing.Size(975, 79);
             this.panel1.TabIndex = 17;
             // 
             // label1
@@ -107,16 +142,16 @@
             // 
             // gBxControles
             // 
-            this.gBxControles.Controls.Add(this.pBxRegresar);
+            this.gBxControles.Controls.Add(this.pbxRegresar);
             this.gBxControles.Controls.Add(this.label10);
             this.gBxControles.Controls.Add(this.label9);
             this.gBxControles.Controls.Add(this.label8);
             this.gBxControles.Controls.Add(this.label7);
-            this.gBxControles.Controls.Add(this.pBxActualizar);
-            this.gBxControles.Controls.Add(this.pBxGuardar);
-            this.gBxControles.Controls.Add(this.pBxCancelar);
+            this.gBxControles.Controls.Add(this.pbxActualizar);
+            this.gBxControles.Controls.Add(this.pbxGuardar);
+            this.gBxControles.Controls.Add(this.pbxCancelar);
             this.gBxControles.Controls.Add(this.label6);
-            this.gBxControles.Controls.Add(this.pBxNuevo);
+            this.gBxControles.Controls.Add(this.pbxNuevo);
             this.gBxControles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gBxControles.Location = new System.Drawing.Point(28, 311);
             this.gBxControles.Name = "gBxControles";
@@ -125,16 +160,16 @@
             this.gBxControles.TabStop = false;
             this.gBxControles.Text = "Controles";
             // 
-            // pBxRegresar
+            // pbxRegresar
             // 
-            this.pBxRegresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBxRegresar.BackgroundImage")));
-            this.pBxRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBxRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBxRegresar.Location = new System.Drawing.Point(322, 31);
-            this.pBxRegresar.Name = "pBxRegresar";
-            this.pBxRegresar.Size = new System.Drawing.Size(57, 60);
-            this.pBxRegresar.TabIndex = 10;
-            this.pBxRegresar.TabStop = false;
+            this.pbxRegresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxRegresar.BackgroundImage")));
+            this.pbxRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxRegresar.Location = new System.Drawing.Point(322, 31);
+            this.pbxRegresar.Name = "pbxRegresar";
+            this.pbxRegresar.Size = new System.Drawing.Size(57, 60);
+            this.pbxRegresar.TabIndex = 10;
+            this.pbxRegresar.TabStop = false;
             // 
             // label10
             // 
@@ -176,38 +211,40 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Guardar";
             // 
-            // pBxActualizar
+            // pbxActualizar
             // 
-            this.pBxActualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBxActualizar.BackgroundImage")));
-            this.pBxActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBxActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBxActualizar.Location = new System.Drawing.Point(173, 33);
-            this.pBxActualizar.Name = "pBxActualizar";
-            this.pBxActualizar.Size = new System.Drawing.Size(57, 58);
-            this.pBxActualizar.TabIndex = 4;
-            this.pBxActualizar.TabStop = false;
+            this.pbxActualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxActualizar.BackgroundImage")));
+            this.pbxActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxActualizar.Location = new System.Drawing.Point(173, 33);
+            this.pbxActualizar.Name = "pbxActualizar";
+            this.pbxActualizar.Size = new System.Drawing.Size(57, 58);
+            this.pbxActualizar.TabIndex = 4;
+            this.pbxActualizar.TabStop = false;
+            this.pbxActualizar.Click += new System.EventHandler(this.pbxActualizar_Click);
             // 
-            // pBxGuardar
+            // pbxGuardar
             // 
-            this.pBxGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBxGuardar.BackgroundImage")));
-            this.pBxGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBxGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBxGuardar.Location = new System.Drawing.Point(98, 33);
-            this.pBxGuardar.Name = "pBxGuardar";
-            this.pBxGuardar.Size = new System.Drawing.Size(57, 58);
-            this.pBxGuardar.TabIndex = 2;
-            this.pBxGuardar.TabStop = false;
+            this.pbxGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxGuardar.BackgroundImage")));
+            this.pbxGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxGuardar.Location = new System.Drawing.Point(98, 33);
+            this.pbxGuardar.Name = "pbxGuardar";
+            this.pbxGuardar.Size = new System.Drawing.Size(57, 58);
+            this.pbxGuardar.TabIndex = 2;
+            this.pbxGuardar.TabStop = false;
+            this.pbxGuardar.Click += new System.EventHandler(this.pbxGuardar_Click);
             // 
-            // pBxCancelar
+            // pbxCancelar
             // 
-            this.pBxCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBxCancelar.BackgroundImage")));
-            this.pBxCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBxCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBxCancelar.Location = new System.Drawing.Point(250, 31);
-            this.pBxCancelar.Name = "pBxCancelar";
-            this.pBxCancelar.Size = new System.Drawing.Size(57, 60);
-            this.pBxCancelar.TabIndex = 3;
-            this.pBxCancelar.TabStop = false;
+            this.pbxCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxCancelar.BackgroundImage")));
+            this.pbxCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCancelar.Location = new System.Drawing.Point(250, 31);
+            this.pbxCancelar.Name = "pbxCancelar";
+            this.pbxCancelar.Size = new System.Drawing.Size(57, 60);
+            this.pbxCancelar.TabIndex = 3;
+            this.pbxCancelar.TabStop = false;
             // 
             // label6
             // 
@@ -219,27 +256,26 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Nuevo";
             // 
-            // pBxNuevo
+            // pbxNuevo
             // 
-            this.pBxNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBxNuevo.BackgroundImage")));
-            this.pBxNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBxNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBxNuevo.Location = new System.Drawing.Point(28, 32);
-            this.pBxNuevo.Name = "pBxNuevo";
-            this.pBxNuevo.Size = new System.Drawing.Size(57, 58);
-            this.pBxNuevo.TabIndex = 0;
-            this.pBxNuevo.TabStop = false;
+            this.pbxNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxNuevo.BackgroundImage")));
+            this.pbxNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxNuevo.Location = new System.Drawing.Point(28, 32);
+            this.pbxNuevo.Name = "pbxNuevo";
+            this.pbxNuevo.Size = new System.Drawing.Size(57, 58);
+            this.pbxNuevo.TabIndex = 0;
+            this.pbxNuevo.TabStop = false;
             // 
             // gBxDatos
             // 
-            this.gBxDatos.Controls.Add(this.cBoSexo);
-            this.gBxDatos.Controls.Add(this.checkBox1);
-            this.gBxDatos.Controls.Add(this.label11);
+            this.gBxDatos.Controls.Add(this.chkSocio);
+            this.gBxDatos.Controls.Add(this.lueSexo);
+            this.gBxDatos.Controls.Add(this.txtApellidoProductor);
+            this.gBxDatos.Controls.Add(this.txtNombreProductor);
             this.gBxDatos.Controls.Add(this.txtIdProductor);
             this.gBxDatos.Controls.Add(this.label2);
-            this.gBxDatos.Controls.Add(this.txtApellidoProductor);
             this.gBxDatos.Controls.Add(this.label3);
-            this.gBxDatos.Controls.Add(this.txtNombreProductor);
             this.gBxDatos.Controls.Add(this.label4);
             this.gBxDatos.Controls.Add(this.label5);
             this.gBxDatos.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,41 +286,58 @@
             this.gBxDatos.TabStop = false;
             this.gBxDatos.Text = "Datos";
             // 
-            // cBoSexo
+            // chkSocio
             // 
-            this.cBoSexo.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cBoSexo.FormattingEnabled = true;
-            this.cBoSexo.Location = new System.Drawing.Point(187, 151);
-            this.cBoSexo.Name = "cBoSexo";
-            this.cBoSexo.Size = new System.Drawing.Size(206, 27);
-            this.cBoSexo.TabIndex = 11;
+            this.chkSocio.Location = new System.Drawing.Point(130, 185);
+            this.chkSocio.Name = "chkSocio";
+            this.chkSocio.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.chkSocio.Properties.Appearance.Options.UseFont = true;
+            this.chkSocio.Properties.Caption = "Socio:";
+            this.chkSocio.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkSocio.Size = new System.Drawing.Size(75, 23);
+            this.chkSocio.TabIndex = 16;
             // 
-            // checkBox1
+            // lueSexo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(186, 189);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.lueSexo.Location = new System.Drawing.Point(184, 151);
+            this.lueSexo.Name = "lueSexo";
+            this.lueSexo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lueSexo.Properties.Appearance.Options.UseFont = true;
+            this.lueSexo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueSexo.Properties.DisplayMember = "Sexo";
+            this.lueSexo.Properties.DropDownRows = 2;
+            this.lueSexo.Properties.NullText = "Seleccione el sexo";
+            this.lueSexo.Properties.ValueMember = "IdSexo";
+            this.lueSexo.Size = new System.Drawing.Size(209, 26);
+            this.lueSexo.TabIndex = 15;
             // 
-            // label11
+            // txtApellidoProductor
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(127, 185);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 19);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Socio:";
+            this.txtApellidoProductor.Location = new System.Drawing.Point(184, 113);
+            this.txtApellidoProductor.Name = "txtApellidoProductor";
+            this.txtApellidoProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtApellidoProductor.Properties.Appearance.Options.UseFont = true;
+            this.txtApellidoProductor.Size = new System.Drawing.Size(209, 26);
+            this.txtApellidoProductor.TabIndex = 14;
+            // 
+            // txtNombreProductor
+            // 
+            this.txtNombreProductor.Location = new System.Drawing.Point(184, 73);
+            this.txtNombreProductor.Name = "txtNombreProductor";
+            this.txtNombreProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtNombreProductor.Properties.Appearance.Options.UseFont = true;
+            this.txtNombreProductor.Size = new System.Drawing.Size(209, 26);
+            this.txtNombreProductor.TabIndex = 13;
             // 
             // txtIdProductor
             // 
-            this.txtIdProductor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdProductor.Location = new System.Drawing.Point(186, 36);
+            this.txtIdProductor.Location = new System.Drawing.Point(184, 33);
             this.txtIdProductor.Name = "txtIdProductor";
-            this.txtIdProductor.Size = new System.Drawing.Size(208, 27);
-            this.txtIdProductor.TabIndex = 5;
+            this.txtIdProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtIdProductor.Properties.Appearance.Options.UseFont = true;
+            this.txtIdProductor.Size = new System.Drawing.Size(209, 26);
+            this.txtIdProductor.TabIndex = 12;
             // 
             // label2
             // 
@@ -296,14 +349,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Número del Productor:";
             // 
-            // txtApellidoProductor
-            // 
-            this.txtApellidoProductor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoProductor.Location = new System.Drawing.Point(185, 113);
-            this.txtApellidoProductor.Name = "txtApellidoProductor";
-            this.txtApellidoProductor.Size = new System.Drawing.Size(208, 27);
-            this.txtApellidoProductor.TabIndex = 7;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -313,14 +358,6 @@
             this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre:";
-            // 
-            // txtNombreProductor
-            // 
-            this.txtNombreProductor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProductor.Location = new System.Drawing.Point(185, 73);
-            this.txtNombreProductor.Name = "txtNombreProductor";
-            this.txtNombreProductor.Size = new System.Drawing.Size(208, 27);
-            this.txtNombreProductor.TabIndex = 6;
             // 
             // label4
             // 
@@ -342,29 +379,185 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Sexo:";
             // 
+            // cafeDBDataSet
+            // 
+            this.cafeDBDataSet.DataSetName = "CafeDBDataSet";
+            this.cafeDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sexoTableAdapter2
+            // 
+            this.sexoTableAdapter2.ClearBeforeFill = true;
+            // 
+            // cafeDBDataSet11
+            // 
+            this.cafeDBDataSet11.DataSetName = "CafeDBDataSet1";
+            this.cafeDBDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sexoBindingSource2
+            // 
+            this.sexoBindingSource2.DataMember = "Sexo";
+            this.sexoBindingSource2.DataSource = this.cafeDBDataSet;
+            // 
+            // sexoTableAdapter1
+            // 
+            this.sexoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cafeDBDataSet1
+            // 
+            this.cafeDBDataSet1.DataSetName = "CafeDBDataSet";
+            this.cafeDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sexoBindingSource1
+            // 
+            this.sexoBindingSource1.DataMember = "Sexo";
+            this.sexoBindingSource1.DataSource = this.cafeDBDataSet1;
+            this.sexoBindingSource1.Sort = "Sexo DESC";
+            // 
+            // sexoTableAdapter
+            // 
+            this.sexoTableAdapter.ClearBeforeFill = true;
+            // 
+            // sexoBindingSource
+            // 
+            this.sexoBindingSource.DataMember = "Sexo";
+            // 
+            // sexoBindingSource3
+            // 
+            this.sexoBindingSource3.DataMember = "Sexo";
+            this.sexoBindingSource3.DataSource = this.cafeDBDataSet11;
+            // 
+            // gcDatosProductor
+            // 
+            this.gcDatosProductor.ContextMenuStrip = this.contextMenuStrip1;
+            this.gcDatosProductor.Location = new System.Drawing.Point(466, 104);
+            this.gcDatosProductor.MainView = this.gvDatosProductor;
+            this.gcDatosProductor.Name = "gcDatosProductor";
+            this.gcDatosProductor.Size = new System.Drawing.Size(497, 353);
+            this.gcDatosProductor.TabIndex = 18;
+            this.gcDatosProductor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDatosProductor});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarStripMenuItem1,
+            this.eliminarStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            // 
+            // editarStripMenuItem1
+            // 
+            this.editarStripMenuItem1.Name = "editarStripMenuItem1";
+            this.editarStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editarStripMenuItem1.Text = "editar";
+            this.editarStripMenuItem1.Click += new System.EventHandler(this.editarStripMenuItem1_Click);
+            // 
+            // eliminarStripMenuItem1
+            // 
+            this.eliminarStripMenuItem1.Name = "eliminarStripMenuItem1";
+            this.eliminarStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.eliminarStripMenuItem1.Text = "eliminar";
+            this.eliminarStripMenuItem1.Click += new System.EventHandler(this.eliminarStripMenuItem1_Click);
+            // 
+            // gvDatosProductor
+            // 
+            this.gvDatosProductor.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdProductor,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
+            this.gvDatosProductor.GridControl = this.gcDatosProductor;
+            this.gvDatosProductor.Name = "gvDatosProductor";
+            this.gvDatosProductor.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gvDatosProductor.OptionsBehavior.Editable = false;
+            this.gvDatosProductor.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gvDatosProductor.OptionsFind.AlwaysVisible = true;
+            this.gvDatosProductor.OptionsFind.FindNullPrompt = "Buscar Aqui";
+            this.gvDatosProductor.OptionsView.ShowFooter = true;
+            this.gvDatosProductor.OptionsView.ShowGroupPanel = false;
+            // 
+            // colIdProductor
+            // 
+            this.colIdProductor.Caption = "Codigo del productor";
+            this.colIdProductor.FieldName = "IdProductor";
+            this.colIdProductor.Name = "colIdProductor";
+            this.colIdProductor.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Productores = {0}", "{0}")});
+            this.colIdProductor.Visible = true;
+            this.colIdProductor.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Nombre";
+            this.gridColumn2.FieldName = "Nombre";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Apellido";
+            this.gridColumn3.FieldName = "Apellido";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Sexo";
+            this.gridColumn4.FieldName = "Sexo";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Socio";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
             // FrmProductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 469);
+            this.ClientSize = new System.Drawing.Size(975, 469);
+            this.Controls.Add(this.gcDatosProductor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.gBxControles);
             this.Controls.Add(this.gBxDatos);
             this.Name = "FrmProductor";
-            this.Text = "FrmProductor";
+            this.Text = "Productor";
+            this.Load += new System.EventHandler(this.FrmProductor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gBxControles.ResumeLayout(false);
             this.gBxControles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxRegresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxActualizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxGuardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxActualizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNuevo)).EndInit();
             this.gBxDatos.ResumeLayout(false);
             this.gBxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSocio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSexo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtApellidoProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexoBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatosProductor)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosProductor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,26 +570,45 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox gBxControles;
-        private System.Windows.Forms.PictureBox pBxRegresar;
+        private System.Windows.Forms.PictureBox pbxRegresar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pBxActualizar;
-        private System.Windows.Forms.PictureBox pBxGuardar;
-        private System.Windows.Forms.PictureBox pBxCancelar;
+        private System.Windows.Forms.PictureBox pbxActualizar;
+        private System.Windows.Forms.PictureBox pbxGuardar;
+        private System.Windows.Forms.PictureBox pbxCancelar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pBxNuevo;
+        private System.Windows.Forms.PictureBox pbxNuevo;
         private System.Windows.Forms.GroupBox gBxDatos;
-        private System.Windows.Forms.ComboBox cBoSexo;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtIdProductor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApellidoProductor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombreProductor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.LookUpEdit lueSexo;
+        private DevExpress.XtraEditors.TextEdit txtApellidoProductor;
+        private DevExpress.XtraEditors.TextEdit txtNombreProductor;
+        private DevExpress.XtraEditors.TextEdit txtIdProductor;
+        private DevExpress.XtraEditors.CheckEdit chkSocio;
+        private CafeDBDataSet cafeDBDataSet;
+        private CafeDBDataSet1TableAdapters.SexoTableAdapter sexoTableAdapter2;
+        private CafeDBDataSet1 cafeDBDataSet11;
+        private System.Windows.Forms.BindingSource sexoBindingSource2;
+        private CafeDBDataSetTableAdapters.SexoTableAdapter sexoTableAdapter1;
+        private CafeDBDataSet cafeDBDataSet1;
+        private System.Windows.Forms.BindingSource sexoBindingSource1;
+        private CafeDBDataSetTableAdapters.SexoTableAdapter sexoTableAdapter;
+        private System.Windows.Forms.BindingSource sexoBindingSource;
+        private System.Windows.Forms.BindingSource sexoBindingSource3;
+        private DevExpress.XtraGrid.GridControl gcDatosProductor;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDatosProductor;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarStripMenuItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdProductor;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }

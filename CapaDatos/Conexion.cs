@@ -9,12 +9,13 @@ using System.Data;
 
 namespace CapaDatos
 {
-    class Conexion
+    public class Conexion
     {
         public SqlConnection cn;
 
         public Conexion()
         {
+          //  cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
 
         }
