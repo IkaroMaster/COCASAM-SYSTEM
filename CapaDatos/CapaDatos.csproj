@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDLugar.cs" />
     <Compile Include="CDProductor.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="Conexion.cs" />

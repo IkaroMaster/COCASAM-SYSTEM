@@ -119,20 +119,76 @@
 --GO
 
 
-CREATE PROCEDURE [dbo].[Sp_Actualizar_Usuario]
-	@IdUsuario int,
-	@Usuario varchar(20),
-	@Contrasena varchar(500),
-	@Estado bit,
-	@Administrador bit
+--CREATE PROCEDURE [dbo].[Sp_Actualizar_Usuario]
+--	@IdUsuario int,
+--	@Usuario varchar(20),
+--	@Contrasena varchar(500),
+--	@Estado bit,
+--	@Administrador bit
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		UPDATE Usuario
+--		SET Usuario = @Usuario, 
+--			Contrasena = @Contrasena,  
+--			Estado = @Estado,
+--			Administrador = @Administrador
+--		WHERE IdUsuario = @IdUsuario
+--	END
+--GO
+
+--------------------------------------------PROCEDIMIENTOS ALMACENADOS LUGAR -----------------------------
+--CREATE PROCEDURE [dbo].[Sp_Guardar_Lugar]
+--	@Lugar varchar(100)
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		INSERT INTO Lugar
+--		VALUES(@Lugar)
+--	END
+--GO
+
+--alter table Lugar alter column Lugar varchar(100)
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_Todo_Lugar]
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT *
+--		FROM Lugar
+--	END
+--GO
+
+--CREATE PROCEDURE [dbo].[Sp_Eliminar_Lugar]
+--	@IdLugar int
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		DELETE 
+--		FROM Lugar
+--		WHERE IdLugar = @IdLugar
+--	END
+--GO
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_Un_Lugar]
+--	@IdLugar int
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT *
+--		FROM Lugar
+--		WHERE IdLugar = @IdLugar
+--	END
+--GO
+
+CREATE PROCEDURE [dbo].[Sp_Actualizar_Lugar]
+	@IdLugar int,
+	@Lugar varchar(15)
 AS
 	BEGIN
 		SET NOCOUNT OFF
-		UPDATE Usuario
-		SET Usuario = @Usuario, 
-			Contrasena = @Contrasena,  
-			Estado = @Estado,
-			Administrador = @Administrador
-		WHERE IdUsuario = @IdUsuario
+		UPDATE Lugar
+		SET Lugar = @Lugar
+		WHERE IdLugar = @IdLugar
 	END
 GO

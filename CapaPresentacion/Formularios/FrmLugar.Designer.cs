@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLugar));
             this.gBxControles = new System.Windows.Forms.GroupBox();
             this.pBxRegresar = new System.Windows.Forms.PictureBox();
@@ -40,21 +41,33 @@
             this.pBxCancelar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pBxNuevo = new System.Windows.Forms.PictureBox();
-            this.gBxDatos = new System.Windows.Forms.GroupBox();
-            this.txtIdLugar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtLugar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.gcDatosLugar = new DevExpress.XtraGrid.GridControl();
+            this.gvDatosLugar = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdLugar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLugar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcDatos = new DevExpress.XtraEditors.GroupControl();
+            this.txtIdLugar = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLugar = new DevExpress.XtraEditors.TextEdit();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gBxControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBxRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).BeginInit();
-            this.gBxDatos.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatosLugar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosLugar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).BeginInit();
+            this.gcDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdLugar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLugar.Properties)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBxControles
@@ -70,7 +83,7 @@
             this.gBxControles.Controls.Add(this.label6);
             this.gBxControles.Controls.Add(this.pBxNuevo);
             this.gBxControles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxControles.Location = new System.Drawing.Point(5, 253);
+            this.gBxControles.Location = new System.Drawing.Point(33, 256);
             this.gBxControles.Name = "gBxControles";
             this.gBxControles.Size = new System.Drawing.Size(413, 124);
             this.gBxControles.TabIndex = 22;
@@ -138,6 +151,7 @@
             this.pBxActualizar.Size = new System.Drawing.Size(57, 58);
             this.pBxActualizar.TabIndex = 4;
             this.pBxActualizar.TabStop = false;
+            this.pBxActualizar.Click += new System.EventHandler(this.pBxActualizar_Click);
             // 
             // pBxGuardar
             // 
@@ -149,6 +163,7 @@
             this.pBxGuardar.Size = new System.Drawing.Size(57, 58);
             this.pBxGuardar.TabIndex = 2;
             this.pBxGuardar.TabStop = false;
+            this.pBxGuardar.Click += new System.EventHandler(this.pBxGuardar_Click);
             // 
             // pBxCancelar
             // 
@@ -181,56 +196,7 @@
             this.pBxNuevo.Size = new System.Drawing.Size(57, 58);
             this.pBxNuevo.TabIndex = 0;
             this.pBxNuevo.TabStop = false;
-            // 
-            // gBxDatos
-            // 
-            this.gBxDatos.Controls.Add(this.txtIdLugar);
-            this.gBxDatos.Controls.Add(this.label2);
-            this.gBxDatos.Controls.Add(this.label3);
-            this.gBxDatos.Controls.Add(this.txtLugar);
-            this.gBxDatos.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxDatos.Location = new System.Drawing.Point(8, 111);
-            this.gBxDatos.Name = "gBxDatos";
-            this.gBxDatos.Size = new System.Drawing.Size(413, 121);
-            this.gBxDatos.TabIndex = 21;
-            this.gBxDatos.TabStop = false;
-            this.gBxDatos.Text = "Datos";
-            // 
-            // txtIdLugar
-            // 
-            this.txtIdLugar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdLugar.Location = new System.Drawing.Point(186, 36);
-            this.txtIdLugar.Name = "txtIdLugar";
-            this.txtIdLugar.Size = new System.Drawing.Size(208, 27);
-            this.txtIdLugar.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Número de Lugar:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(107, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre:";
-            // 
-            // txtLugar
-            // 
-            this.txtLugar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLugar.Location = new System.Drawing.Point(185, 73);
-            this.txtLugar.Name = "txtLugar";
-            this.txtLugar.Size = new System.Drawing.Size(208, 27);
-            this.txtLugar.TabIndex = 6;
+            this.pBxNuevo.Click += new System.EventHandler(this.pBxNuevo_Click);
             // 
             // panel1
             // 
@@ -238,7 +204,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(429, 79);
+            this.panel1.Size = new System.Drawing.Size(848, 79);
             this.panel1.TabIndex = 20;
             // 
             // label1
@@ -252,16 +218,142 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Lugar";
             // 
+            // gcDatosLugar
+            // 
+            this.gcDatosLugar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gcDatosLugar.ContextMenuStrip = this.contextMenuStrip1;
+            this.gcDatosLugar.Location = new System.Drawing.Point(452, 99);
+            this.gcDatosLugar.MainView = this.gvDatosLugar;
+            this.gcDatosLugar.Name = "gcDatosLugar";
+            this.gcDatosLugar.Size = new System.Drawing.Size(379, 290);
+            this.gcDatosLugar.TabIndex = 184;
+            this.gcDatosLugar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDatosLugar});
+            // 
+            // gvDatosLugar
+            // 
+            this.gvDatosLugar.ColumnPanelRowHeight = 26;
+            this.gvDatosLugar.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdLugar,
+            this.colLugar});
+            this.gvDatosLugar.GridControl = this.gcDatosLugar;
+            this.gvDatosLugar.Name = "gvDatosLugar";
+            this.gvDatosLugar.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gvDatosLugar.OptionsBehavior.Editable = false;
+            this.gvDatosLugar.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gvDatosLugar.OptionsFind.AlwaysVisible = true;
+            this.gvDatosLugar.OptionsFind.FindNullPrompt = "Buscar aquí";
+            this.gvDatosLugar.OptionsView.ShowFooter = true;
+            this.gvDatosLugar.OptionsView.ShowGroupPanel = false;
+            this.gvDatosLugar.RowHeight = 22;
+            // 
+            // colIdLugar
+            // 
+            this.colIdLugar.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colIdLugar.AppearanceCell.Options.UseFont = true;
+            this.colIdLugar.AppearanceCell.Options.UseTextOptions = true;
+            this.colIdLugar.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colIdLugar.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colIdLugar.AppearanceHeader.Options.UseFont = true;
+            this.colIdLugar.AppearanceHeader.Options.UseTextOptions = true;
+            this.colIdLugar.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIdLugar.Caption = "Id Lugar";
+            this.colIdLugar.FieldName = "IdLugar";
+            this.colIdLugar.Name = "colIdLugar";
+            // 
+            // colLugar
+            // 
+            this.colLugar.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colLugar.AppearanceCell.Options.UseFont = true;
+            this.colLugar.AppearanceCell.Options.UseTextOptions = true;
+            this.colLugar.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colLugar.AppearanceHeader.Options.UseFont = true;
+            this.colLugar.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLugar.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLugar.Caption = "Lugar";
+            this.colLugar.FieldName = "Lugar";
+            this.colLugar.Name = "colLugar";
+            this.colLugar.Visible = true;
+            this.colLugar.VisibleIndex = 0;
+            // 
+            // gcDatos
+            // 
+            this.gcDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gcDatos.Controls.Add(this.txtIdLugar);
+            this.gcDatos.Controls.Add(this.labelControl2);
+            this.gcDatos.Controls.Add(this.txtLugar);
+            this.gcDatos.Enabled = false;
+            this.gcDatos.Location = new System.Drawing.Point(33, 99);
+            this.gcDatos.Name = "gcDatos";
+            this.gcDatos.Size = new System.Drawing.Size(408, 126);
+            this.gcDatos.TabIndex = 183;
+            this.gcDatos.Text = "Datos del Lugar";
+            // 
+            // txtIdLugar
+            // 
+            this.txtIdLugar.EditValue = "";
+            this.txtIdLugar.Location = new System.Drawing.Point(98, 25);
+            this.txtIdLugar.Name = "txtIdLugar";
+            this.txtIdLugar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdLugar.Properties.Appearance.Options.UseFont = true;
+            this.txtIdLugar.Size = new System.Drawing.Size(57, 28);
+            this.txtIdLugar.TabIndex = 175;
+            this.txtIdLugar.Visible = false;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(49, 62);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(41, 21);
+            this.labelControl2.TabIndex = 174;
+            this.labelControl2.Text = "Lugar";
+            // 
+            // txtLugar
+            // 
+            this.txtLugar.EditValue = "";
+            this.txtLugar.Location = new System.Drawing.Point(98, 59);
+            this.txtLugar.Name = "txtLugar";
+            this.txtLugar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLugar.Properties.Appearance.Options.UseFont = true;
+            this.txtLugar.Size = new System.Drawing.Size(277, 28);
+            this.txtLugar.TabIndex = 173;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
             // FrmLugar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 401);
+            this.ClientSize = new System.Drawing.Size(843, 401);
+            this.Controls.Add(this.gcDatosLugar);
+            this.Controls.Add(this.gcDatos);
             this.Controls.Add(this.gBxControles);
-            this.Controls.Add(this.gBxDatos);
             this.Controls.Add(this.panel1);
             this.Name = "FrmLugar";
             this.Text = "FrmLugar";
+            this.Load += new System.EventHandler(this.FrmLugar_Load);
             this.gBxControles.ResumeLayout(false);
             this.gBxControles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBxRegresar)).EndInit();
@@ -269,10 +361,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).EndInit();
-            this.gBxDatos.ResumeLayout(false);
-            this.gBxDatos.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatosLugar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosLugar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).EndInit();
+            this.gcDatos.ResumeLayout(false);
+            this.gcDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdLugar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLugar.Properties)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -290,12 +388,18 @@
         private System.Windows.Forms.PictureBox pBxCancelar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pBxNuevo;
-        private System.Windows.Forms.GroupBox gBxDatos;
-        private System.Windows.Forms.TextBox txtIdLugar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtLugar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.GridControl gcDatosLugar;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDatosLugar;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdLugar;
+        private DevExpress.XtraGrid.Columns.GridColumn colLugar;
+        private DevExpress.XtraEditors.GroupControl gcDatos;
+        private DevExpress.XtraEditors.TextEdit txtIdLugar;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtLugar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

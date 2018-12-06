@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CELugar.cs" />
     <Compile Include="CEProductor.cs" />
     <Compile Include="CEUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
