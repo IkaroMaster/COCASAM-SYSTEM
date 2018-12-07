@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDLugar.cs" />
+    <Compile Include="CDNotaPeso.cs" />
     <Compile Include="CDProductor.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="Conexion.cs" />

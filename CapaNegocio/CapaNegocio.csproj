@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CNLugar.cs" />
+    <Compile Include="CNNotaPeso.cs" />
     <Compile Include="CNProductor.cs" />
     <Compile Include="CNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

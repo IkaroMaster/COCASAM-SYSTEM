@@ -46,6 +46,8 @@ namespace CapaPresentacion.Formularios
                 return false;
             }
 
+            
+
             return true;
             
         }
@@ -56,6 +58,8 @@ namespace CapaPresentacion.Formularios
             txtNombreProductor.EditValue = "";
             txtApellidoProductor.EditValue = "";
             lueSexo.EditValue = null;
+            slueLugar.EditValue = null;
+            dgvLugar.DataSource = "";
 
         }
 
@@ -65,19 +69,28 @@ namespace CapaPresentacion.Formularios
             lueSexo.Properties.DataSource = objP.ListadoSexo().Tables["Sexo"];
         }
 
+        private void LlenarComboLugar()
+        {
+            CNLugar objP = new CNLugar();
+            slueLugar.Properties.DataSource = objP.ListadoLugar().Tables["Lugar"];
+        }
+
         private void ListadoProductor()
         {
             CNProductor objP = new CNProductor();
             gcDatosProductor.DataSource = objP.ListadoProductor().Tables["Productor"];
         }
 
-        private void HabilitarControles(Boolean nuevo, Boolean guardar, Boolean actualizar, Boolean cancelar,Boolean regresar)
+        private void HabilitarControles(Boolean nuevo, Boolean guardar, Boolean actualizar, Boolean cancelar,Boolean regresar,Boolean datos,Boolean grid)
         {
             pbxNuevo.Enabled = nuevo;
             pbxGuardar.Enabled = guardar;
             pbxActualizar.Enabled = actualizar;
             pbxCancelar.Enabled = cancelar;
             pbxRegresar.Enabled = regresar;
+            gBxDatos.Enabled = datos;
+            gcDatosProductor.Enabled = grid;
+            gBoxLugar.Enabled = datos;
             
         }
 
@@ -86,6 +99,7 @@ namespace CapaPresentacion.Formularios
             this.Validar();
             if (Validar())
             {
+                
                 CNProductor objGuardarProductor = new CNProductor();
                 CEProductor objProductor = new CEProductor()
                 {
@@ -98,11 +112,17 @@ namespace CapaPresentacion.Formularios
 
                 if (objGuardarProductor.NuevoProductor(objProductor) > 0 )
                 {
-                    Limpiar();
-                    HabilitarControles(true, false, true, false, true);
-                    XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
 
+                    if (GuardarLugares())
+                    {
+                        Limpiar();
+                        ListadoProductor();
+                        HabilitarControles(true, false, false, false, true,false,true);
+                        XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+                
 
             }
         }
@@ -117,13 +137,44 @@ namespace CapaPresentacion.Formularios
             this.sexoTableAdapter.Fill(this.cafeDBDataSet.Sexo);
             Limpiar();
             LlenarComboSexo();
+            LlenarComboLugar();
             ListadoProductor();
+            HabilitarControles(true, false, false, false, true,false,true);
+            MostrarLugarXProductor("cc000");
+
+            
+
+
+        }
+
+        private void EliminarLugarXProductor(String idProductor)
+        {
+            CNProductor objEliminarProductor = new CNProductor();
+            
+            CEProductor objProductor = new CEProductor()
+            {
+                IdProductor = idProductor
+            };
+
+            if (objEliminarProductor.EliminarLugarXProductor(objProductor) > 0)
+            {
+                ListadoProductor();
+               // XtraMessageBox.Show("Registro lugares Eliminado Satisfactoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+               // XtraMessageBox.Show("Error al Eliminar el Registro", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void eliminarStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
             CNProductor objEliminarProductor = new CNProductor();
             String idProductor = gvDatosProductor.GetRowCellValue(gvDatosProductor.FocusedRowHandle, colIdProductor).ToString();
+
+            EliminarLugarXProductor(idProductor);
+
             CEProductor objProductor = new CEProductor()
             {
                 IdProductor = idProductor
@@ -146,6 +197,9 @@ namespace CapaPresentacion.Formularios
             this.Validate();
             if (Validar())
             {
+                String idProductor = txtIdProductor.Text.Trim();
+                EliminarLugarXProductor(idProductor);
+                GuardarLugares();
                 CNProductor objActualizarProductor = new CNProductor();
                 CEProductor objProductor = new CEProductor()
                 {
@@ -159,7 +213,7 @@ namespace CapaPresentacion.Formularios
                 if (objActualizarProductor.ActualizarProductor(objProductor) > 0)
                 {
                     Limpiar();
-                    HabilitarControles(true, false, false, false, false);
+                    HabilitarControles(true, false, false, false,true,false,true);
                     ListadoProductor();
                     XtraMessageBox.Show("Registro Actualizado Satisfactoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -176,7 +230,25 @@ namespace CapaPresentacion.Formularios
             String id = gvDatosProductor.GetRowCellValue(gvDatosProductor.FocusedRowHandle, colIdProductor).ToString();
 
             MostrarProductor(id);
-            HabilitarControles(false, false, true, true, true);
+            HabilitarControles(false, false, true, true, false,true,false);
+
+            MostrarLugarXProductor(id);
+            
+        }
+
+        public void MostrarLugarXProductor(String IdProductor)
+        {
+            dgvLugar.AutoGenerateColumns = false;
+            CNProductor objP = new CNProductor();
+            dgvLugar.DataSource = objP.ListarLugarXProductor(IdProductor).Tables["Productor"];
+            //slueLugar.Properties.DataSource = objP.ListarLugarXProductor(IdProductor).Tables["Lugar"];
+
+            //CNProductor objObtenerProductor = new CNProductor();
+            //CEProductor objP = objObtenerProductor.ObtenerLugarXProductor(IdProductor.Trim());
+
+            ////DataTable dt = objP.IdLugar;
+            //dgvLugar.Rows.Add(objP);
+
         }
 
         public void MostrarProductor(String IdProductor)
@@ -189,6 +261,133 @@ namespace CapaPresentacion.Formularios
             txtApellidoProductor.EditValue = objP.Apellido.Trim();
             lueSexo.EditValue = objP.IdSexo;
             chkSocio.Checked = objP.Socio;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarLugar_Click(object sender, EventArgs e)
+        {
+
+            
+
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvLugar.Rows.Count > 0)
+            {
+                dgvLugar.Rows.Remove(dgvLugar.CurrentRow);
+            }
+        }
+
+        private Boolean GuardarLugares()
+        {
+            
+            if (dgvLugar.Rows.Count > 0)
+            {
+                CNProductor objGuardarProductorXLugar = new CNProductor();
+                foreach (DataGridViewRow item in dgvLugar.Rows)
+                {
+                    CEProductor objProductor = new CEProductor()
+                    {
+                        IdProductor = txtIdProductor.Text.Trim(),
+                        IdLugar = int.Parse(Convert.ToString(item.Cells["colIdLugar"].Value))
+
+                    };
+
+                    if (objGuardarProductorXLugar.NuevoProductorXLugar(objProductor) > 0)
+                    {
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("No se ha logrado almacenar los lugares del productor", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return false;
+                    }
+                }
+
+                return true;
+
+
+            }
+           
+                return true;
+         
+
+        }
+
+        private void slueLugar_EditValueChanged(object sender, EventArgs e)
+        {
+
+            if (slueLugar.EditValue == null || slueLugar.EditValue.ToString() == "")
+            {
+               // slueLugar.ErrorText = "Seleccione un lugar para agregarlo a la lista de lugares de produccion";
+            }
+            else
+            {
+
+
+                bool existe = dgvLugar.Rows.Cast<DataGridViewRow>().Any(row => Convert.ToString(row.Cells["colIdLugar"].Value) == slueLugar.EditValue.ToString());
+
+                if (!existe )
+                {
+                    ////Agregar las Filas al DataRow y asignar el valor correspondiente. 
+                    //DataTable dt = new DataTable();
+                    //dt = dgvLugar.DataSource as DataTable;
+
+                    //DataRow datarow;
+                    //datarow = dt.NewRow(); //Con esto le indica que es una nueva fila.
+
+                    //datarow["IdLugar"] = int.Parse(slueLugar.EditValue.ToString());
+                    //datarow["Lugar"] = slueLugar.Text;
+
+
+                    ////Esto se encargará de agregar la fila.
+                    //dt.Rows.Add(datarow);
+
+
+                    DataTable data = (DataTable)(dgvLugar.DataSource);
+                    DataRow datarow;
+                    datarow = data.NewRow(); //Con esto le indica que es una nueva fila.
+
+                    datarow["IdLugar"] = int.Parse(slueLugar.EditValue.ToString());
+                    datarow["Lugar"] = slueLugar.Text;
+                    //Esto se encargará de agregar la fila.
+                    data.Rows.Add(datarow);
+                    //dgvLugar[0].DataSource = data;
+                    
+                }
+                //else
+                //if (!existe && pbxGuardar.Enabled == true)
+                //{
+
+
+                //    // Add the row to the rows collection. 
+                //    //table.Rows.Add(newRow);
+
+                //    int id = int.Parse(slueLugar.EditValue.ToString());
+                //    string lugar = slueLugar.Text;
+                //    dgvLugar.Rows.Add(id, lugar);
+                //    slueLugar.EditValue = null;
+
+                //}
+
+            }
+
+        }
+
+        private void pbxNuevo_Click(object sender, EventArgs e)
+        {
+            HabilitarControles(false, true, false, true, false,true,false);
+            MostrarLugarXProductor("cc000");
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

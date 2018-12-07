@@ -19,6 +19,10 @@ namespace CapaNegocio
         {
             return objP.InsertarProductor(objProductor);
         }
+        public int NuevoProductorXLugar(CEProductor objProductor)
+        {
+            return objP.InsertarProductorXLugar(objProductor);
+        }
         public int ActualizarProductor(CEProductor objProductor)
         {
             return objP.ActualizarProductor(objProductor);
@@ -43,6 +47,16 @@ namespace CapaNegocio
         public DataSet ListadoProductor()
         {
             return objP.ListadoProductor();
+        }
+
+        public DataSet ListarLugarXProductor(String IdProductor)
+        {
+            return objP.ListarLugarXProductor(IdProductor);
+        }
+
+        public int EliminarLugarXProductor(CEProductor objProductor)
+        {
+            return objP.EliminarLugarXProductor(objProductor);
         }
     }
 }

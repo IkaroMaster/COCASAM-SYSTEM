@@ -13,5 +13,7 @@ namespace CapaEntidad
         public String Apellido { get; set; }
         public int IdSexo { get; set; }
         public Boolean Socio { get; set; }
+        public int IdLugar { get; set; }
+        public String Lugar { get; set; }
     }
 }

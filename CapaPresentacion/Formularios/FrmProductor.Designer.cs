@@ -75,6 +75,16 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gBoxLugar = new System.Windows.Forms.GroupBox();
+            this.slueLugar = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvLugar = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colIdLugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -99,6 +109,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosProductor)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosProductor)).BeginInit();
+            this.gBoxLugar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slueLugar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLugar)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -153,7 +168,7 @@
             this.gBxControles.Controls.Add(this.label6);
             this.gBxControles.Controls.Add(this.pbxNuevo);
             this.gBxControles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxControles.Location = new System.Drawing.Point(28, 311);
+            this.gBxControles.Location = new System.Drawing.Point(359, 511);
             this.gBxControles.Name = "gBxControles";
             this.gBxControles.Size = new System.Drawing.Size(413, 124);
             this.gBxControles.TabIndex = 15;
@@ -266,6 +281,7 @@
             this.pbxNuevo.Size = new System.Drawing.Size(57, 58);
             this.pbxNuevo.TabIndex = 0;
             this.pbxNuevo.TabStop = false;
+            this.pbxNuevo.Click += new System.EventHandler(this.pbxNuevo_Click);
             // 
             // gBxDatos
             // 
@@ -281,7 +297,7 @@
             this.gBxDatos.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gBxDatos.Location = new System.Drawing.Point(28, 85);
             this.gBxDatos.Name = "gBxDatos";
-            this.gBxDatos.Size = new System.Drawing.Size(413, 220);
+            this.gBxDatos.Size = new System.Drawing.Size(413, 214);
             this.gBxDatos.TabIndex = 14;
             this.gBxDatos.TabStop = false;
             this.gBxDatos.Text = "Datos";
@@ -444,11 +460,12 @@
             this.eliminarStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editarStripMenuItem1
             // 
             this.editarStripMenuItem1.Name = "editarStripMenuItem1";
-            this.editarStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editarStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.editarStripMenuItem1.Text = "editar";
             this.editarStripMenuItem1.Click += new System.EventHandler(this.editarStripMenuItem1_Click);
             // 
@@ -518,15 +535,112 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
+            // gBoxLugar
+            // 
+            this.gBoxLugar.Controls.Add(this.slueLugar);
+            this.gBoxLugar.Controls.Add(this.dgvLugar);
+            this.gBoxLugar.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBoxLugar.Location = new System.Drawing.Point(28, 305);
+            this.gBoxLugar.Name = "gBoxLugar";
+            this.gBoxLugar.Size = new System.Drawing.Size(278, 204);
+            this.gBoxLugar.TabIndex = 17;
+            this.gBoxLugar.TabStop = false;
+            this.gBoxLugar.Text = "Lugares de Produccion";
+            this.gBoxLugar.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // slueLugar
+            // 
+            this.slueLugar.EditValue = "";
+            this.slueLugar.Location = new System.Drawing.Point(12, 43);
+            this.slueLugar.Name = "slueLugar";
+            this.slueLugar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.slueLugar.Properties.Appearance.Options.UseFont = true;
+            this.slueLugar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueLugar.Properties.DisplayMember = "Lugar";
+            this.slueLugar.Properties.NullText = "Seleccione un lugar";
+            this.slueLugar.Properties.ValueMember = "IdLugar";
+            this.slueLugar.Properties.View = this.searchLookUpEdit1View;
+            this.slueLugar.Size = new System.Drawing.Size(253, 26);
+            this.slueLugar.TabIndex = 3;
+            this.slueLugar.EditValueChanged += new System.EventHandler(this.slueLugar_EditValueChanged);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn6,
+            this.gridColumn1});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Id";
+            this.gridColumn6.FieldName = "IdLugar";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Lugar";
+            this.gridColumn1.FieldName = "Lugar";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // dgvLugar
+            // 
+            this.dgvLugar.AllowUserToAddRows = false;
+            this.dgvLugar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLugar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIdLugar,
+            this.Column2});
+            this.dgvLugar.ContextMenuStrip = this.contextMenuStrip2;
+            this.dgvLugar.Location = new System.Drawing.Point(12, 76);
+            this.dgvLugar.Name = "dgvLugar";
+            this.dgvLugar.Size = new System.Drawing.Size(253, 118);
+            this.dgvLugar.TabIndex = 0;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(121, 26);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar ";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // colIdLugar
+            // 
+            this.colIdLugar.DataPropertyName = "IdLugar";
+            this.colIdLugar.HeaderText = "Id";
+            this.colIdLugar.Name = "colIdLugar";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Lugar";
+            this.Column2.HeaderText = "Lugar";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
             // FrmProductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 469);
+            this.ClientSize = new System.Drawing.Size(975, 639);
+            this.Controls.Add(this.gBxControles);
+            this.Controls.Add(this.gBoxLugar);
             this.Controls.Add(this.gcDatosProductor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.gBxControles);
             this.Controls.Add(this.gBxDatos);
             this.Name = "FrmProductor";
             this.Text = "Productor";
@@ -558,6 +672,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosProductor)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosProductor)).EndInit();
+            this.gBoxLugar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.slueLugar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLugar)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,5 +729,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private System.Windows.Forms.GroupBox gBoxLugar;
+        private System.Windows.Forms.DataGridView dgvLugar;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueLugar;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdLugar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

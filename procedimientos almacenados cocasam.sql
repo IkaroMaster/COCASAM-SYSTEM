@@ -16,6 +16,18 @@
 
 --GO
 
+--CREATE PROCEDURE [dbo].[Sp_Guardar_ProductorXLugar]
+--	@IdProductor nvarchar(5),
+--	@IdLugar int
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		INSERT INTO ProductorXLugar
+--		VALUES(@IdProductor,@IdLugar)
+--	END
+--GO
+
+----execute Sp_Guardar_ProductorXLugar 'CC000', 1
 
 --CREATE PROCEDURE [dbo].[Sp_Mostrar_Sexo]
 --AS
@@ -80,6 +92,19 @@
 --GO
 
 
+--CREATE PROCEDURE [dbo].[Sp_Eliminar_LugarXProductor]
+--	@IdProductor nvarchar(5)
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		DELETE 
+--		FROM ProductorXLugar
+--		WHERE IdProductor = @IdProductor
+--	END
+--GO
+
+
+
 -----------------------	PROCEDIMIENTOS ALMACENADOS USUARIO --------------------------
 
 --CREATE PROCEDURE [dbo].[Sp_Guardar_Usuario]
@@ -137,6 +162,22 @@
 --	END
 --GO
 
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_LugarXProductor]
+--	@IdProductor nvarchar(5)
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT p.IdLugar, l.Lugar
+--		FROM ProductorXLugar p inner join Lugar l
+--		on p.IdLugar = l.IdLugar
+--		WHERE IdProductor = @IdProductor
+--	END
+--GO
+
+----execute Sp_Mostrar_LugarXProductor 'CC007'
+
+
+
 --------------------------------------------PROCEDIMIENTOS ALMACENADOS LUGAR -----------------------------
 --CREATE PROCEDURE [dbo].[Sp_Guardar_Lugar]
 --	@Lugar varchar(100)
@@ -181,14 +222,36 @@
 --	END
 --GO
 
-CREATE PROCEDURE [dbo].[Sp_Actualizar_Lugar]
-	@IdLugar int,
-	@Lugar varchar(15)
-AS
-	BEGIN
-		SET NOCOUNT OFF
-		UPDATE Lugar
-		SET Lugar = @Lugar
-		WHERE IdLugar = @IdLugar
-	END
-GO
+--CREATE PROCEDURE [dbo].[Sp_Actualizar_Lugar]
+--	@IdLugar int,
+--	@Lugar varchar(15)
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		UPDATE Lugar
+--		SET Lugar = @Lugar
+--		WHERE IdLugar = @IdLugar
+--	END
+--GO
+
+--------------------------------------------PROCEDIMIENTOS ALMACENADOS NOTA PESO -----------------------------
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_TipoCafe]
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT *
+--		FROM TipoCafe
+--	END
+--GO
+
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_Productor_Combobox]
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT IdProductor, CONCAT(Nombre, ' ', Apellido) AS NombreCompleto
+--		FROM Productor
+--	END
+--GO
+--execute Sp_Mostrar_Productor_Combobox

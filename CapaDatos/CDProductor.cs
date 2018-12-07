@@ -43,6 +43,34 @@ namespace CapaDatos
             return resultado;
         }
 
+        public int InsertarProductorXLugar(CEProductor objP)
+        {
+            int resultado;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Sp_Guardar_ProductorXLugar", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdProductor", SqlDbType.NVarChar, 5).Value = objP.IdProductor;
+                cmd.Parameters.Add("@IdLugar", SqlDbType.Int).Value = objP.IdLugar;
+
+                ConectarBD();
+                resultado = cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("Error al tratar de almacenar el nuevo Lugar del Productor", exc);
+            }
+            finally
+            {
+                CerrarBD();
+            }
+
+            return resultado;
+        }
+
         public int ActualizarProductor(CEProductor objP)
         {
             int resultado;
@@ -96,6 +124,30 @@ namespace CapaDatos
             return resultado;
         }
 
+        public int EliminarLugarXProductor(CEProductor objP)
+        {
+            int resultado = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Sp_Eliminar_LugarXProductor", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdProductor", SqlDbType.NVarChar, 5).Value = objP.IdProductor;
+
+                ConectarBD();
+                resultado = cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al tratar Eliminar los lugares del productor", ex);
+            }
+            finally
+            {
+                CerrarBD();
+            }
+            return resultado;
+        }
+
         public CEProductor MostrarUnProductor(String IdProductor)
         {
             SqlCommand cmd;
@@ -128,6 +180,8 @@ namespace CapaDatos
                 CerrarBD();
             }
         }
+
+        
 
 
 
@@ -177,6 +231,43 @@ namespace CapaDatos
                 CerrarBD();
                 ds.Dispose();
             }
+        }
+
+        public DataSet ListarLugarXProductor(String IdProductor)
+        {
+
+            
+            
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlCommand cmd;
+            try
+            {
+                ConectarBD();
+                cmd = new SqlCommand("Sp_Mostrar_LugarXProductor", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdProductor", SqlDbType.NVarChar, 5).Value = IdProductor;
+                da.SelectCommand = cmd;
+                da.Fill(ds, "Productor");
+                return ds;
+
+
+
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("Error al solicitar los datos", exc);
+            }
+            finally
+            {
+                CerrarBD();
+                ds.Dispose();
+            }
+
+
+
+
+
         }
     }
 }
