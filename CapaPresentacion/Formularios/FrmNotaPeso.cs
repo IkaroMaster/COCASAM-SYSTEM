@@ -275,5 +275,28 @@ namespace CapaPresentacion.Formularios
         {
             txtObservacion.Text = slueUsuario.EditValue.ToString();
         }
+
+        private void pBxNuevo_Click(object sender, EventArgs e)
+        {
+            HabilitarControles(false, true, true, false, false);
+
+        }
+
+
+        private void HabilitarControles(Boolean nuevo, Boolean guardar, Boolean cancelar, Boolean regresar, Boolean group)
+        {
+            pBxNuevo.Enabled = nuevo;
+            
+            pBxGuardar.Enabled = guardar;
+            pBxCancelar.Enabled = cancelar;
+            pBxRegresar.Enabled = regresar;
+            gcDatosNotaPeso.Visible = group;
+
+        }
+
+        private void pBxCancelar_Click(object sender, EventArgs e)
+        {
+            HabilitarControles(true, false, false, true, true);
+        }
     }
 }
