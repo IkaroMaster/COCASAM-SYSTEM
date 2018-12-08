@@ -255,3 +255,40 @@
 --	END
 --GO
 --execute Sp_Mostrar_Productor_Combobox
+
+
+--CREATE PROCEDURE [dbo].[Sp_Guardar_NotaPeso]
+--	@IdNotaPeso int,
+--	@IdProductor nvarchar(5),
+--	@IdTipoCafe int,
+--	@IdLugar int,
+--	@IdUsuario int,
+--	@Fecha date,
+--	@PesoBruto float,
+--	@Tara decimal(10,2),
+--	@Descuento decimal(10,2),
+--	@Humedad float,
+--	@Observaciones nvarchar(100),
+--	@PrecioUnitario decimal(10,2),
+--	@Anulada bit
+--AS
+--	BEGIN
+--	  SET NOCOUNT OFF
+--		INSERT INTO NotaPeso
+--		VALUES(@IdNotaPeso ,@IdProductor ,@IdTipoCafe ,@IdLugar ,@IdUsuario ,@Fecha ,@PesoBruto,@Tara,@Descuento ,@Humedad ,@Observaciones ,@PrecioUnitario ,@Anulada)
+--	END
+
+--GO
+
+
+--CREATE PROCEDURE [dbo].[Sp_Guardar_DetalleNotaPeso]
+--	@IdNotaPeso int,
+--	@Peso decimal(10,2),
+--	@Saco int
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		INSERT INTO DetalleNotaPeso(IdNotaPeso,Peso,Saco)
+--		VALUES(@IdNotaPeso,@Peso,@Saco)
+--	END
+--GO

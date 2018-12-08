@@ -42,8 +42,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pBxNuevo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gcDatosLugar = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gvDatosLugar = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIdLugar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLugar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,9 +55,6 @@
             this.txtIdLugar = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtLugar = new DevExpress.XtraEditors.TextEdit();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gBxControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBxRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxActualizar)).BeginInit();
@@ -61,13 +62,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosLugar)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosLugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).BeginInit();
             this.gcDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdLugar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLugar.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBxControles
@@ -83,7 +85,7 @@
             this.gBxControles.Controls.Add(this.label6);
             this.gBxControles.Controls.Add(this.pBxNuevo);
             this.gBxControles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxControles.Location = new System.Drawing.Point(33, 256);
+            this.gBxControles.Location = new System.Drawing.Point(19, 261);
             this.gBxControles.Name = "gBxControles";
             this.gBxControles.Size = new System.Drawing.Size(413, 124);
             this.gBxControles.TabIndex = 22;
@@ -201,18 +203,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(848, 79);
             this.panel1.TabIndex = 20;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.lugar;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 65);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(91, 20);
+            this.label1.Location = new System.Drawing.Point(93, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 18;
@@ -229,6 +242,28 @@
             this.gcDatosLugar.TabIndex = 184;
             this.gcDatosLugar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDatosLugar});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // gvDatosLugar
             // 
@@ -283,7 +318,7 @@
             this.gcDatos.Controls.Add(this.labelControl2);
             this.gcDatos.Controls.Add(this.txtLugar);
             this.gcDatos.Enabled = false;
-            this.gcDatos.Location = new System.Drawing.Point(33, 99);
+            this.gcDatos.Location = new System.Drawing.Point(18, 99);
             this.gcDatos.Name = "gcDatos";
             this.gcDatos.Size = new System.Drawing.Size(408, 126);
             this.gcDatos.TabIndex = 183;
@@ -320,28 +355,6 @@
             this.txtLugar.Size = new System.Drawing.Size(277, 28);
             this.txtLugar.TabIndex = 173;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
             // FrmLugar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,14 +376,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosLugar)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosLugar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).EndInit();
             this.gcDatos.ResumeLayout(false);
             this.gcDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdLugar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLugar.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,5 +415,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

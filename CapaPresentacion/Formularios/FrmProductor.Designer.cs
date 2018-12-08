@@ -81,10 +81,10 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dgvLugar = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colIdLugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -141,7 +141,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 65);
             this.pictureBox1.TabIndex = 11;
@@ -168,7 +168,7 @@
             this.gBxControles.Controls.Add(this.label6);
             this.gBxControles.Controls.Add(this.pbxNuevo);
             this.gBxControles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxControles.Location = new System.Drawing.Point(359, 511);
+            this.gBxControles.Location = new System.Drawing.Point(338, 497);
             this.gBxControles.Name = "gBxControles";
             this.gBxControles.Size = new System.Drawing.Size(413, 124);
             this.gBxControles.TabIndex = 15;
@@ -295,7 +295,7 @@
             this.gBxDatos.Controls.Add(this.label4);
             this.gBxDatos.Controls.Add(this.label5);
             this.gBxDatos.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBxDatos.Location = new System.Drawing.Point(28, 85);
+            this.gBxDatos.Location = new System.Drawing.Point(22, 85);
             this.gBxDatos.Name = "gBxDatos";
             this.gBxDatos.Size = new System.Drawing.Size(413, 214);
             this.gBxDatos.TabIndex = 14;
@@ -445,7 +445,7 @@
             // gcDatosProductor
             // 
             this.gcDatosProductor.ContextMenuStrip = this.contextMenuStrip1;
-            this.gcDatosProductor.Location = new System.Drawing.Point(466, 104);
+            this.gcDatosProductor.Location = new System.Drawing.Point(450, 97);
             this.gcDatosProductor.MainView = this.gvDatosProductor;
             this.gcDatosProductor.Name = "gcDatosProductor";
             this.gcDatosProductor.Size = new System.Drawing.Size(497, 353);
@@ -459,7 +459,7 @@
             this.editarStripMenuItem1,
             this.eliminarStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editarStripMenuItem1
@@ -540,12 +540,12 @@
             this.gBoxLugar.Controls.Add(this.slueLugar);
             this.gBoxLugar.Controls.Add(this.dgvLugar);
             this.gBoxLugar.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBoxLugar.Location = new System.Drawing.Point(28, 305);
+            this.gBoxLugar.Location = new System.Drawing.Point(22, 305);
             this.gBoxLugar.Name = "gBoxLugar";
             this.gBoxLugar.Size = new System.Drawing.Size(278, 204);
             this.gBoxLugar.TabIndex = 17;
             this.gBoxLugar.TabStop = false;
-            this.gBoxLugar.Text = "Lugares de Produccion";
+            this.gBoxLugar.Text = "Lugares de Producción";
             this.gBoxLugar.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // slueLugar
@@ -604,6 +604,19 @@
             this.dgvLugar.Size = new System.Drawing.Size(253, 118);
             this.dgvLugar.TabIndex = 0;
             // 
+            // colIdLugar
+            // 
+            this.colIdLugar.DataPropertyName = "IdLugar";
+            this.colIdLugar.HeaderText = "Id";
+            this.colIdLugar.Name = "colIdLugar";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Lugar";
+            this.Column2.HeaderText = "Lugar";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -618,24 +631,11 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar ";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // colIdLugar
-            // 
-            this.colIdLugar.DataPropertyName = "IdLugar";
-            this.colIdLugar.HeaderText = "Id";
-            this.colIdLugar.Name = "colIdLugar";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Lugar";
-            this.Column2.HeaderText = "Lugar";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
             // FrmProductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 639);
+            this.ClientSize = new System.Drawing.Size(962, 639);
             this.Controls.Add(this.gBxControles);
             this.Controls.Add(this.gBoxLugar);
             this.Controls.Add(this.gcDatosProductor);

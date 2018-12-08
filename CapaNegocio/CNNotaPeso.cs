@@ -14,6 +14,16 @@ namespace CapaNegocio
     {
         CDNotaPeso objNP = new CDNotaPeso();
 
+        public int NuevaNotaPeso(CENotaPeso objNotaPeso)
+        {
+            return objNP.InsertarNotaPeso(objNotaPeso);
+        }
+
+        public int NuevoDetalleNotaPeso(CENotaPeso objNotaPeso)
+        {
+            return objNP.InsertarDetalleNotaPeso(objNotaPeso);
+        }
+
         public DataSet ListadoProductor()
         {
             return objNP.ListadoProductor();
@@ -22,6 +32,11 @@ namespace CapaNegocio
         public DataSet ListadoTipoCafe()
         {
             return objNP.ListadoTipoCafe();
+        }
+
+        public DataSet ListarLugarXProductor(String IdProductor)
+        {
+            return objNP.ListarLugarXProductor(IdProductor);
         }
 
     }

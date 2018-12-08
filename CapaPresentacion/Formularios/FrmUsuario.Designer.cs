@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,11 +47,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pBxNuevo = new System.Windows.Forms.PictureBox();
             this.gcDatosUsuario = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gvDatosUsuario = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIdUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colContrasena = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAdministrador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDatos = new DevExpress.XtraEditors.GroupControl();
             this.chkAdministrador = new DevExpress.XtraEditors.CheckEdit();
             this.chkEstado = new DevExpress.XtraEditors.CheckEdit();
@@ -61,9 +64,6 @@
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdUsuario = new DevExpress.XtraEditors.TextEdit();
-            this.colAdministrador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosUsuario)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).BeginInit();
             this.gcDatos.SuspendLayout();
@@ -82,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +99,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.usuario;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 65);
+            this.pictureBox1.Size = new System.Drawing.Size(69, 65);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
@@ -112,7 +112,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(92, 24);
+            this.label1.Location = new System.Drawing.Point(88, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 29);
             this.label1.TabIndex = 12;
@@ -122,7 +122,7 @@
             // 
             this.txtIdProductor.Enabled = false;
             this.txtIdProductor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdProductor.Location = new System.Drawing.Point(191, 27);
+            this.txtIdProductor.Location = new System.Drawing.Point(178, 30);
             this.txtIdProductor.Name = "txtIdProductor";
             this.txtIdProductor.Size = new System.Drawing.Size(10, 27);
             this.txtIdProductor.TabIndex = 5;
@@ -258,9 +258,9 @@
             // gcDatosUsuario
             // 
             this.gcDatosUsuario.ContextMenuStrip = this.contextMenuStrip1;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gcDatosUsuario.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcDatosUsuario.Location = new System.Drawing.Point(383, 85);
             this.gcDatosUsuario.MainView = this.gvDatosUsuario;
             this.gcDatosUsuario.Name = "gcDatosUsuario";
@@ -268,6 +268,20 @@
             this.gcDatosUsuario.TabIndex = 153;
             this.gcDatosUsuario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDatosUsuario});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // gvDatosUsuario
             // 
@@ -352,6 +366,20 @@
             this.colEstado.Visible = true;
             this.colEstado.VisibleIndex = 1;
             this.colEstado.Width = 215;
+            // 
+            // colAdministrador
+            // 
+            this.colAdministrador.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colAdministrador.AppearanceCell.Options.UseFont = true;
+            this.colAdministrador.AppearanceHeader.Options.UseFont = true;
+            this.colAdministrador.AppearanceHeader.Options.UseTextOptions = true;
+            this.colAdministrador.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colAdministrador.Caption = "Administrador";
+            this.colAdministrador.FieldName = "Administrador";
+            this.colAdministrador.Name = "colAdministrador";
+            this.colAdministrador.Visible = true;
+            this.colAdministrador.VisibleIndex = 2;
+            this.colAdministrador.Width = 76;
             // 
             // gcDatos
             // 
@@ -453,34 +481,6 @@
             this.txtIdUsuario.TabIndex = 171;
             this.txtIdUsuario.Visible = false;
             // 
-            // colAdministrador
-            // 
-            this.colAdministrador.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.colAdministrador.AppearanceCell.Options.UseFont = true;
-            this.colAdministrador.AppearanceHeader.Options.UseFont = true;
-            this.colAdministrador.AppearanceHeader.Options.UseTextOptions = true;
-            this.colAdministrador.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colAdministrador.Caption = "Administrador";
-            this.colAdministrador.FieldName = "Administrador";
-            this.colAdministrador.Name = "colAdministrador";
-            this.colAdministrador.Visible = true;
-            this.colAdministrador.VisibleIndex = 2;
-            this.colAdministrador.Width = 76;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 26);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +504,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBxCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxNuevo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosUsuario)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatos)).EndInit();
             this.gcDatos.ResumeLayout(false);
@@ -513,7 +514,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
