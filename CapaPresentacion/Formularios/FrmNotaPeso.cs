@@ -92,6 +92,8 @@ namespace CapaPresentacion.Formularios
         private void FrmNotaPeso_Load(object sender, EventArgs e)
         {
             LlenarCombobox();
+            ListadoNotaPeso();
+            HabilitarControles(true, false, false, true, true);
         }
 
         private void LlenarCombobox()
@@ -273,13 +275,19 @@ namespace CapaPresentacion.Formularios
 
         private void slueUsuario_EditValueChanged(object sender, EventArgs e)
         {
-            txtObservacion.Text = slueUsuario.EditValue.ToString();
+          
         }
 
         private void pBxNuevo_Click(object sender, EventArgs e)
         {
             HabilitarControles(false, true, true, false, false);
 
+        }
+
+        private void ListadoNotaPeso()
+        {
+            CNNotaPeso objP = new CNNotaPeso();
+            gcDatosNotaPeso.DataSource = objP.ListadoNotaPeso().Tables["NotaPeso"];
         }
 
 

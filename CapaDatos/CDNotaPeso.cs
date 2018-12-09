@@ -164,5 +164,28 @@ namespace CapaDatos
             }
 
         }
+
+        public DataSet ListadoNotaPeso()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da;
+
+            try
+            {
+                ConectarBD();
+                da = new SqlDataAdapter("Sp_Mostrar_Todo_NotaPeso", cn);
+                da.Fill(ds, "NotaPeso");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al mostrar los datos de la nota peso", ex);
+            }
+            finally
+            {
+                CerrarBD();
+                ds.Dispose();
+            }
+        }
     }
 }

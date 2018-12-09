@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNotaPeso));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,12 +94,23 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.gcDatosNotaPeso = new DevExpress.XtraGrid.GridControl();
-            this.gvDatosUsuario = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colIdUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvDatosNotaPeso = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdNotaPeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colContrasena = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAdministrador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -134,7 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHumedad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosNotaPeso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatosUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosNotaPeso)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -922,114 +933,203 @@
             // 
             // gcDatosNotaPeso
             // 
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gcDatosNotaPeso.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcDatosNotaPeso.Location = new System.Drawing.Point(0, 78);
-            this.gcDatosNotaPeso.MainView = this.gvDatosUsuario;
+            this.gcDatosNotaPeso.MainView = this.gvDatosNotaPeso;
             this.gcDatosNotaPeso.Name = "gcDatosNotaPeso";
             this.gcDatosNotaPeso.Size = new System.Drawing.Size(1190, 487);
             this.gcDatosNotaPeso.TabIndex = 154;
             this.gcDatosNotaPeso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDatosUsuario});
+            this.gvDatosNotaPeso});
             // 
-            // gvDatosUsuario
+            // gvDatosNotaPeso
             // 
-            this.gvDatosUsuario.ColumnPanelRowHeight = 26;
-            this.gvDatosUsuario.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIdUsuario,
+            this.gvDatosNotaPeso.ColumnPanelRowHeight = 26;
+            this.gvDatosNotaPeso.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdNotaPeso,
             this.colUsuario,
-            this.colContrasena,
-            this.colEstado,
-            this.colAdministrador});
-            this.gvDatosUsuario.GridControl = this.gcDatosNotaPeso;
-            this.gvDatosUsuario.Name = "gvDatosUsuario";
-            this.gvDatosUsuario.OptionsBehavior.AllowIncrementalSearch = true;
-            this.gvDatosUsuario.OptionsBehavior.Editable = false;
-            this.gvDatosUsuario.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
-            this.gvDatosUsuario.OptionsFind.AlwaysVisible = true;
-            this.gvDatosUsuario.OptionsFind.FindNullPrompt = "Buscar aquí";
-            this.gvDatosUsuario.OptionsView.ShowFooter = true;
-            this.gvDatosUsuario.OptionsView.ShowGroupPanel = false;
-            this.gvDatosUsuario.RowHeight = 22;
+            this.gridColumn3,
+            this.gridColumn6,
+            this.gridColumn9,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20,
+            this.gridColumn21,
+            this.gridColumn22});
+            this.gvDatosNotaPeso.GridControl = this.gcDatosNotaPeso;
+            this.gvDatosNotaPeso.Name = "gvDatosNotaPeso";
+            this.gvDatosNotaPeso.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gvDatosNotaPeso.OptionsBehavior.Editable = false;
+            this.gvDatosNotaPeso.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gvDatosNotaPeso.OptionsFind.AlwaysVisible = true;
+            this.gvDatosNotaPeso.OptionsFind.FindNullPrompt = "Buscar aquí";
+            this.gvDatosNotaPeso.OptionsView.ShowFooter = true;
+            this.gvDatosNotaPeso.OptionsView.ShowGroupPanel = false;
+            this.gvDatosNotaPeso.RowHeight = 22;
             // 
-            // colIdUsuario
+            // colIdNotaPeso
             // 
-            this.colIdUsuario.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.colIdUsuario.AppearanceCell.Options.UseFont = true;
-            this.colIdUsuario.AppearanceCell.Options.UseTextOptions = true;
-            this.colIdUsuario.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colIdUsuario.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.colIdUsuario.AppearanceHeader.Options.UseFont = true;
-            this.colIdUsuario.AppearanceHeader.Options.UseTextOptions = true;
-            this.colIdUsuario.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colIdUsuario.Caption = "Id Usuario";
-            this.colIdUsuario.FieldName = "IdUsuario";
-            this.colIdUsuario.Name = "colIdUsuario";
-            this.colIdUsuario.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Usuario = {0}", "{0}")});
-            this.colIdUsuario.Width = 149;
+            this.colIdNotaPeso.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.colIdNotaPeso.AppearanceCell.Options.UseFont = true;
+            this.colIdNotaPeso.AppearanceCell.Options.UseTextOptions = true;
+            this.colIdNotaPeso.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colIdNotaPeso.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.colIdNotaPeso.AppearanceHeader.Options.UseFont = true;
+            this.colIdNotaPeso.AppearanceHeader.Options.UseTextOptions = true;
+            this.colIdNotaPeso.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIdNotaPeso.Caption = "Id Nota de Peso";
+            this.colIdNotaPeso.FieldName = "IdNotaPeso";
+            this.colIdNotaPeso.Name = "colIdNotaPeso";
+            this.colIdNotaPeso.Width = 149;
             // 
             // colUsuario
             // 
-            this.colUsuario.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.colUsuario.AppearanceCell.Options.UseFont = true;
             this.colUsuario.AppearanceCell.Options.UseTextOptions = true;
             this.colUsuario.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.colUsuario.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.colUsuario.AppearanceHeader.Options.UseFont = true;
             this.colUsuario.AppearanceHeader.Options.UseTextOptions = true;
             this.colUsuario.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colUsuario.Caption = "Usuario";
-            this.colUsuario.FieldName = "Usuario";
+            this.colUsuario.Caption = "Nombre Completo";
+            this.colUsuario.FieldName = "NombreCompleto";
             this.colUsuario.Name = "colUsuario";
+            this.colUsuario.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Total Notas Peso = {0}", "{0}")});
             this.colUsuario.Visible = true;
             this.colUsuario.VisibleIndex = 0;
-            this.colUsuario.Width = 206;
+            this.colUsuario.Width = 150;
             // 
-            // colContrasena
+            // gridColumn3
             // 
-            this.colContrasena.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.colContrasena.AppearanceCell.Options.UseFont = true;
-            this.colContrasena.AppearanceCell.Options.UseTextOptions = true;
-            this.colContrasena.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colContrasena.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.colContrasena.AppearanceHeader.Options.UseFont = true;
-            this.colContrasena.AppearanceHeader.Options.UseTextOptions = true;
-            this.colContrasena.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colContrasena.Caption = "Contraseña";
-            this.colContrasena.FieldName = "Contraseña";
-            this.colContrasena.Name = "colContrasena";
-            this.colContrasena.Width = 188;
+            this.gridColumn3.Caption = "Lugar";
+            this.gridColumn3.FieldName = "Lugar";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 87;
             // 
-            // colEstado
+            // gridColumn6
             // 
-            this.colEstado.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.colEstado.AppearanceCell.Options.UseFont = true;
-            this.colEstado.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.colEstado.AppearanceHeader.Options.UseFont = true;
-            this.colEstado.AppearanceHeader.Options.UseTextOptions = true;
-            this.colEstado.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colEstado.Caption = "Activo";
-            this.colEstado.FieldName = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 1;
-            this.colEstado.Width = 215;
+            this.gridColumn6.Caption = "Calidad del cafe";
+            this.gridColumn6.FieldName = "TipoCafe";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 92;
             // 
-            // colAdministrador
+            // gridColumn9
             // 
-            this.colAdministrador.AppearanceCell.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.colAdministrador.AppearanceCell.Options.UseFont = true;
-            this.colAdministrador.AppearanceHeader.Options.UseFont = true;
-            this.colAdministrador.AppearanceHeader.Options.UseTextOptions = true;
-            this.colAdministrador.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colAdministrador.Caption = "Administrador";
-            this.colAdministrador.FieldName = "Administrador";
-            this.colAdministrador.Name = "colAdministrador";
-            this.colAdministrador.Visible = true;
-            this.colAdministrador.VisibleIndex = 2;
-            this.colAdministrador.Width = 76;
+            this.gridColumn9.Caption = "Pesado Por";
+            this.gridColumn9.FieldName = "PesadoPor";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 3;
+            this.gridColumn9.Width = 83;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Fecha ";
+            this.gridColumn12.FieldName = "Fecha";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 4;
+            this.gridColumn12.Width = 81;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Total Pesado";
+            this.gridColumn13.FieldName = "TotalPeso";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 5;
+            this.gridColumn13.Width = 77;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Sacos Totales";
+            this.gridColumn14.FieldName = "TotalSaco";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 6;
+            this.gridColumn14.Width = 79;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Peso Bruto";
+            this.gridColumn15.FieldName = "PesoBruto";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 7;
+            this.gridColumn15.Width = 70;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Tara";
+            this.gridColumn16.FieldName = "Tara";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 8;
+            this.gridColumn16.Width = 50;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Descuento";
+            this.gridColumn17.FieldName = "Descuento";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 9;
+            this.gridColumn17.Width = 66;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Peso Neto";
+            this.gridColumn18.FieldName = "PesoNeto";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 10;
+            this.gridColumn18.Width = 60;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Quintales Oro";
+            this.gridColumn19.FieldName = "QuintalOro";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 11;
+            this.gridColumn19.Width = 76;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Observaciones";
+            this.gridColumn20.FieldName = "Observaciones";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Width = 86;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Precio por Quintal";
+            this.gridColumn21.FieldName = "PrecioUnitario";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 12;
+            this.gridColumn21.Width = 100;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "Total";
+            this.gridColumn22.FieldName = "Total";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 13;
+            this.gridColumn22.Width = 101;
             // 
             // FrmNotaPeso
             // 
@@ -1081,7 +1181,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHumedad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosNotaPeso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatosUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatosNotaPeso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1151,11 +1251,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Ca;
         private DevExpress.XtraGrid.GridControl gcDatosNotaPeso;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDatosUsuario;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdUsuario;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDatosNotaPeso;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdNotaPeso;
         private DevExpress.XtraGrid.Columns.GridColumn colUsuario;
-        private DevExpress.XtraGrid.Columns.GridColumn colContrasena;
-        private DevExpress.XtraGrid.Columns.GridColumn colEstado;
-        private DevExpress.XtraGrid.Columns.GridColumn colAdministrador;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
     }
 }

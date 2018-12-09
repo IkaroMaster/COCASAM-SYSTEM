@@ -39,5 +39,10 @@ namespace CapaNegocio
             return objNP.ListarLugarXProductor(IdProductor);
         }
 
+        public DataSet ListadoNotaPeso()
+        {
+            return objNP.ListadoNotaPeso();
+        }
+
     }
 }

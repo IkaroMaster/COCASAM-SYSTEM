@@ -292,3 +292,30 @@
 --		VALUES(@IdNotaPeso,@Peso,@Saco)
 --	END
 --GO
+
+CREATE PROCEDURE [dbo].[Sp_Mostrar_Todo_NotaPeso]
+AS
+	BEGIN
+		SET NOCOUNT ON
+		SELECT  np.IdNotaPeso,CONCAT(p.Nombre, ' ', p.Apellido) AS NombreCompleto,l.Lugar,tc.TipoCafe,u.Usuario AS PesadoPor,
+				np.Fecha,SUM(dnp.Peso) AS TotalPeso,SUM(dnp.Saco) as TotalSaco,np.PesoBruto,np.Tara,np.Descuento,
+				(np.PesoBruto - np.Tara - Descuento) AS PesoNeto,((np.PesoBruto - np.Tara - Descuento)/ 1.25) AS QuintalOro,
+				np.Observaciones,np.PrecioUnitario,((np.PesoBruto - np.Tara - Descuento)* np.PrecioUnitario) AS Total 
+		FROM NotaPeso np inner join DetalleNotaPeso dnp
+							on np.IdNotaPeso = dnp.IdNotaPeso
+							inner join Productor p
+							on np.IdProductor = p.IdProductor
+							inner join TipoCafe tc
+							on np.IdTipoCafe = tc.IdTipoCafe
+							inner join Lugar l
+							on np.IdLugar = l.IdLugar
+							inner join Usuario u
+							on np.IdUsuario = u.IdUsuario
+		WHERE np.Anulada = 0
+		GROUP BY np.IdNotaPeso,p.Nombre,p.Apellido,l.Lugar,tc.TipoCafe,u.Usuario,np.Fecha,np.PesoBruto,np.Tara,np.Descuento,
+				np.Observaciones,np.PrecioUnitario
+							
+	END
+GO
+
+execute Sp_Mostrar_Todo_NotaPeso
