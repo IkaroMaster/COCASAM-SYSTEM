@@ -24,6 +24,11 @@ namespace CapaNegocio
             return objNP.InsertarDetalleNotaPeso(objNotaPeso);
         }
 
+        public int ActualizarNotaPeso(CENotaPeso objNotaPeso)
+        {
+            return objNP.ActualizarAnularNotaPeso(objNotaPeso);
+        }
+
         public DataSet ListadoProductor()
         {
             return objNP.ListadoProductor();

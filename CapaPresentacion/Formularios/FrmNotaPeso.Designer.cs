@@ -61,6 +61,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.gBxDatos = new System.Windows.Forms.GroupBox();
+            this.txtPrecioQ = new DevExpress.XtraEditors.TextEdit();
+            this.txtObservacion = new DevExpress.XtraEditors.TextEdit();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtHumedad = new DevExpress.XtraEditors.TextEdit();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.slueUsuario = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,15 +92,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Ca = new System.Windows.Forms.Label();
-            this.txtPrecioQ = new DevExpress.XtraEditors.TextEdit();
-            this.txtObservacion = new DevExpress.XtraEditors.TextEdit();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtHumedad = new DevExpress.XtraEditors.TextEdit();
-            this.txtDescuento = new DevExpress.XtraEditors.TextEdit();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.gcDatosNotaPeso = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.anularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gvDatosNotaPeso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIdNotaPeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -111,6 +112,8 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cafeDBDataSet1 = new CapaPresentacion.CafeDBDataSet();
+            this.txtDescuento = new DevExpress.XtraEditors.TextEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -129,6 +132,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTara.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoBruto.Properties)).BeginInit();
             this.gBxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioQ.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHumedad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueLugar.Properties)).BeginInit();
@@ -140,12 +146,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.slueProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroFactura.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioQ.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtObservacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHumedad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosNotaPeso)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosNotaPeso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -248,6 +253,7 @@
             this.pBxGuardar.Size = new System.Drawing.Size(57, 58);
             this.pBxGuardar.TabIndex = 2;
             this.pBxGuardar.TabStop = false;
+            this.pBxGuardar.Click += new System.EventHandler(this.pBxGuardar_Click_1);
             // 
             // pBxCancelar
             // 
@@ -303,6 +309,7 @@
             this.btnCalcularSacos.Size = new System.Drawing.Size(240, 36);
             this.btnCalcularSacos.TabIndex = 50;
             this.btnCalcularSacos.Text = "Calcular ";
+            this.btnCalcularSacos.Click += new System.EventHandler(this.btnCalcularSacos_Click_2);
             // 
             // dgvDetalleNotaPeso
             // 
@@ -496,6 +503,74 @@
             this.gBxDatos.TabIndex = 46;
             this.gBxDatos.TabStop = false;
             this.gBxDatos.Text = "Datos";
+            // 
+            // txtPrecioQ
+            // 
+            this.txtPrecioQ.Location = new System.Drawing.Point(187, 395);
+            this.txtPrecioQ.Name = "txtPrecioQ";
+            this.txtPrecioQ.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtPrecioQ.Properties.Appearance.Options.UseFont = true;
+            this.txtPrecioQ.Size = new System.Drawing.Size(207, 26);
+            this.txtPrecioQ.TabIndex = 53;
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(187, 333);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtObservacion.Properties.Appearance.Options.UseFont = true;
+            this.txtObservacion.Properties.AutoHeight = false;
+            this.txtObservacion.Size = new System.Drawing.Size(207, 56);
+            this.txtObservacion.TabIndex = 52;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(69, 398);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 19);
+            this.label14.TabIndex = 51;
+            this.label14.Text = "Precio/qq Lps:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(63, 333);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(117, 19);
+            this.label13.TabIndex = 50;
+            this.label13.Text = "Observaciones:";
+            // 
+            // txtHumedad
+            // 
+            this.txtHumedad.Location = new System.Drawing.Point(187, 297);
+            this.txtHumedad.Name = "txtHumedad";
+            this.txtHumedad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtHumedad.Properties.Appearance.Options.UseFont = true;
+            this.txtHumedad.Size = new System.Drawing.Size(207, 26);
+            this.txtHumedad.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(47, 268);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(133, 19);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Descuento /H Q/:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(81, 300);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 19);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "%Humedad:";
             // 
             // slueUsuario
             // 
@@ -732,6 +807,7 @@
             this.slueProductor.Properties.View = this.gridView3;
             this.slueProductor.Size = new System.Drawing.Size(207, 28);
             this.slueProductor.TabIndex = 24;
+            this.slueProductor.EditValueChanged += new System.EventHandler(this.slueProductor_EditValueChanged_1);
             // 
             // gridView3
             // 
@@ -854,95 +930,33 @@
             this.Ca.TabIndex = 3;
             this.Ca.Text = "Calidad del Café:";
             // 
-            // txtPrecioQ
-            // 
-            this.txtPrecioQ.Location = new System.Drawing.Point(187, 395);
-            this.txtPrecioQ.Name = "txtPrecioQ";
-            this.txtPrecioQ.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtPrecioQ.Properties.Appearance.Options.UseFont = true;
-            this.txtPrecioQ.Size = new System.Drawing.Size(207, 26);
-            this.txtPrecioQ.TabIndex = 53;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Location = new System.Drawing.Point(187, 333);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtObservacion.Properties.Appearance.Options.UseFont = true;
-            this.txtObservacion.Properties.AutoHeight = false;
-            this.txtObservacion.Size = new System.Drawing.Size(207, 56);
-            this.txtObservacion.TabIndex = 52;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(69, 398);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 19);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "Precio/qq Lps:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(63, 333);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 19);
-            this.label13.TabIndex = 50;
-            this.label13.Text = "Observaciones:";
-            // 
-            // txtHumedad
-            // 
-            this.txtHumedad.Location = new System.Drawing.Point(187, 297);
-            this.txtHumedad.Name = "txtHumedad";
-            this.txtHumedad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtHumedad.Properties.Appearance.Options.UseFont = true;
-            this.txtHumedad.Size = new System.Drawing.Size(207, 26);
-            this.txtHumedad.TabIndex = 49;
-            // 
-            // txtDescuento
-            // 
-            this.txtDescuento.Location = new System.Drawing.Point(187, 265);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtDescuento.Properties.Appearance.Options.UseFont = true;
-            this.txtDescuento.Size = new System.Drawing.Size(207, 26);
-            this.txtDescuento.TabIndex = 48;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(47, 268);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(133, 19);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "Descuento /H Q/:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(81, 300);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 19);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "%Humedad:";
-            // 
             // gcDatosNotaPeso
             // 
+            this.gcDatosNotaPeso.ContextMenuStrip = this.contextMenuStrip1;
             gridLevelNode1.RelationName = "Level1";
             this.gcDatosNotaPeso.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gcDatosNotaPeso.Location = new System.Drawing.Point(0, 78);
+            this.gcDatosNotaPeso.Location = new System.Drawing.Point(0, 536);
             this.gcDatosNotaPeso.MainView = this.gvDatosNotaPeso;
             this.gcDatosNotaPeso.Name = "gcDatosNotaPeso";
-            this.gcDatosNotaPeso.Size = new System.Drawing.Size(1190, 487);
+            this.gcDatosNotaPeso.Size = new System.Drawing.Size(1190, 29);
             this.gcDatosNotaPeso.TabIndex = 154;
             this.gcDatosNotaPeso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDatosNotaPeso});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.anularToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 26);
+            // 
+            // anularToolStripMenuItem
+            // 
+            this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
+            this.anularToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.anularToolStripMenuItem.Text = "Anular";
+            this.anularToolStripMenuItem.Click += new System.EventHandler(this.anularToolStripMenuItem_Click);
             // 
             // gvDatosNotaPeso
             // 
@@ -1131,6 +1145,20 @@
             this.gridColumn22.VisibleIndex = 13;
             this.gridColumn22.Width = 101;
             // 
+            // cafeDBDataSet1
+            // 
+            this.cafeDBDataSet1.DataSetName = "CafeDBDataSet";
+            this.cafeDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtDescuento
+            // 
+            this.txtDescuento.Location = new System.Drawing.Point(187, 265);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtDescuento.Properties.Appearance.Options.UseFont = true;
+            this.txtDescuento.Size = new System.Drawing.Size(207, 26);
+            this.txtDescuento.TabIndex = 48;
+            // 
             // FrmNotaPeso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1165,6 +1193,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoBruto.Properties)).EndInit();
             this.gBxDatos.ResumeLayout(false);
             this.gBxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioQ.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHumedad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueLugar.Properties)).EndInit();
@@ -1176,12 +1207,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.slueProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroFactura.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioQ.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtObservacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHumedad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDatosNotaPeso)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatosNotaPeso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1223,7 +1253,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private DevExpress.XtraEditors.TextEdit txtHumedad;
-        private DevExpress.XtraEditors.TextEdit txtDescuento;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.SearchLookUpEdit slueUsuario;
@@ -1268,5 +1297,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem anularToolStripMenuItem;
+        private CafeDBDataSet cafeDBDataSet1;
+        private DevExpress.XtraEditors.TextEdit txtDescuento;
     }
 }

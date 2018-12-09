@@ -55,6 +55,32 @@ namespace CapaDatos
             return resultado;
         }
 
+        public int ActualizarAnularNotaPeso(CENotaPeso objNP)
+        {
+            int resultado;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Sp_Actualizar_AnularNotaPeso", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@IdNotaPeso", SqlDbType.Int).Value = objNP.IdNotaPeso;
+                cmd.Parameters.Add("@Anulada", SqlDbType.Bit).Value = objNP.Anulada;
+
+                ConectarBD();
+                resultado = cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al tratar de Anular la Nota Peso", ex);
+            }
+            finally
+            {
+                CerrarBD();
+            }
+            return resultado;
+        }
+
         public int InsertarDetalleNotaPeso(CENotaPeso objNP)
         {
             int resultado;

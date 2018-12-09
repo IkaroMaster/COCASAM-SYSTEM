@@ -48,6 +48,7 @@ namespace CapaPresentacion.Formularios
                 txtDescuento.ErrorText = "Ingrese el descuento";
                 return false;
             }
+           
             if (String.IsNullOrEmpty(txtHumedad.EditValue.ToString().Trim()))
             {
                 txtHumedad.ErrorText = "Ingrese el porcentaje de humedad";
@@ -146,10 +147,7 @@ namespace CapaPresentacion.Formularios
         }
 
 
-        private void txtObservacion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void slueProductor_EditValueChanged(object sender, EventArgs e)
         {
@@ -159,7 +157,7 @@ namespace CapaPresentacion.Formularios
                 slueLugar.Properties.DataSource = objNP.ListarLugarXProductor(idProductor).Tables["Productor"];
 
             }
-              }
+        }
 
        
         private void btnCalcularSacos_Click(object sender, EventArgs e)
@@ -199,84 +197,14 @@ namespace CapaPresentacion.Formularios
 
         private void pBxGuardar_Click(object sender, EventArgs e)
         {
-            this.Validar();
-            if (Validar())
-            {
-
-                CNNotaPeso objGuardarNotaPeso = new CNNotaPeso();
-                CENotaPeso objNotaPeso = new CENotaPeso()
-                {
-                    IdNotaPeso = int.Parse(txtNumeroFactura.Text.Trim()),
-                    IdProductor = slueProductor.EditValue.ToString(),
-                    IdTipoCafe = int.Parse(slueCalidadCafe.EditValue.ToString()),
-                    IdLugar = int.Parse(slueLugar.EditValue.ToString()),
-                    IdUsuario = int.Parse(slueUsuario.EditValue.ToString()),
-                    Fecha = deFecha.DateTime.Date,
-                    PesoBruto = float.Parse(txtPesoBruto.Text.Trim()),
-                    Tara = decimal.Parse(txtTara.Text.Trim()),
-                    Descuento = decimal.Parse(txtDescuento.Text.Trim()),
-                    Humedad = float.Parse(txtHumedad.Text.Trim()),
-                    Observaciones = txtObservacion.Text.Trim(),
-                    PrecioUnitario = decimal.Parse(txtPrecioQ.Text.Trim()),
-                    Anulada = false
-                    
-                };
-
-                if (objGuardarNotaPeso.NuevaNotaPeso(objNotaPeso) > 0)
-                {
-                    //XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    if (GuardarDetallesNotaPeso())
-                    {
-                        Limpiar();
-                       // ListadoProductor();
-                        //HabilitarControles(true, false, false, false, true, false, true);
-                        XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-
-
-            }
+            
         }
 
         private void btnCalcularSacos_Click_1(object sender, EventArgs e)
         {
-            double totalPeso = 0;
-            int totalSacos = 0;
-            foreach (DataGridViewRow item in dgvDetalleNotaPeso.Rows)
-            {
-                totalPeso += Convert.ToDouble(item.Cells["ColPeso"].Value);
-                totalSacos += Convert.ToInt32(item.Cells["ColSacos"].Value);
-            }
-
-            double pesoBruto = totalPeso / 100;
-            double tara = totalSacos * 0.005;
-            double descuentoHumedad = Convert.ToDouble(txtDescuento.Text.Trim());
-
-            double pesoNeto = pesoBruto - tara - descuentoHumedad;
-            double quintalOro = pesoNeto / 1.20;
-            double quintalOroLegal = pesoNeto / 1.25;
-            double precioUnitario = Convert.ToDouble(txtPrecioQ.Text);
-            double precioTotal = quintalOro * precioUnitario;
-            txtObservacion.Text = Convert.ToString(descuentoHumedad);
-
-            txtPesoBruto.Text = (pesoBruto.ToString());
-            txtTara.Text = (tara.ToString());
-            txtPesoNeto.Text = (pesoNeto.ToString());
-            txtQuintales.Text = (quintalOro.ToString());
-            txtQuitalesOroLegal.Text = (quintalOroLegal.ToString());
-            txtPrecioTotal.Text = (precioTotal.ToString());
-
-
-
-
-
         }
 
-        private void slueUsuario_EditValueChanged(object sender, EventArgs e)
-        {
-          
-        }
+        
 
         private void pBxNuevo_Click(object sender, EventArgs e)
         {
@@ -305,6 +233,136 @@ namespace CapaPresentacion.Formularios
         private void pBxCancelar_Click(object sender, EventArgs e)
         {
             HabilitarControles(true, false, false, true, true);
+        }
+
+        private void anularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            
+            int idNotaPeso = int.Parse(gvDatosNotaPeso.GetRowCellValue(gvDatosNotaPeso.FocusedRowHandle, colIdNotaPeso).ToString());
+
+            DialogResult dialogResult = XtraMessageBox.Show("Desea Anular la Nota Peso Numero --> "+idNotaPeso+"  ?", "COCASAM", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CNNotaPeso objActualizarNotaPeso = new CNNotaPeso();
+                CENotaPeso objNotaPeso = new CENotaPeso()
+                {
+                    IdNotaPeso = idNotaPeso,
+                    Anulada = true
+                };
+
+                if (objActualizarNotaPeso.ActualizarNotaPeso(objNotaPeso) > 0)
+                {
+                    ListadoNotaPeso();
+
+                    XtraMessageBox.Show("Nota peso con N " + idNotaPeso + " ha sido anulada!. ", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    XtraMessageBox.Show("Error al Actualizar el Registro", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                XtraMessageBox.Show("Accion Cancelada!", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                
+                
+         
+        }
+
+        private void pBxGuardar_Click_1(object sender, EventArgs e)
+        {
+            this.Validar();
+            if (Validar())
+            {
+
+                CNNotaPeso objGuardarNotaPeso = new CNNotaPeso();
+                CENotaPeso objNotaPeso = new CENotaPeso()
+                {
+                    IdNotaPeso = int.Parse(txtNumeroFactura.Text.Trim()),
+                    IdProductor = slueProductor.EditValue.ToString(),
+                    IdTipoCafe = int.Parse(slueCalidadCafe.EditValue.ToString()),
+                    IdLugar = int.Parse(slueLugar.EditValue.ToString()),
+                    IdUsuario = int.Parse(slueUsuario.EditValue.ToString()),
+                    Fecha = deFecha.DateTime.Date,
+                    PesoBruto = float.Parse(txtPesoBruto.Text.Trim()),
+                    Tara = decimal.Parse(txtTara.Text.Trim()),
+                    Descuento = decimal.Parse(txtDescuento.Text.Trim()),
+                    Humedad = float.Parse(txtHumedad.Text.Trim()),
+                    Observaciones = txtObservacion.Text.Trim(),
+                    PrecioUnitario = decimal.Parse(txtPrecioQ.Text.Trim()),
+                    Anulada = false
+
+                };
+
+                if (objGuardarNotaPeso.NuevaNotaPeso(objNotaPeso) > 0)
+                {
+                    //XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (GuardarDetallesNotaPeso())
+                    {
+                        Limpiar();
+                        // ListadoProductor();
+                        //HabilitarControles(true, false, false, false, true, false, true);
+                        ListadoNotaPeso();
+                        XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+
+            }
+
+        }
+
+        private void slueProductor_EditValueChanged_1(object sender, EventArgs e)
+        {
+            if (slueProductor.EditValue != null)
+            {
+                string idProductor = slueProductor.EditValue.ToString();
+                slueLugar.Properties.DataSource = objNP.ListarLugarXProductor(idProductor).Tables["Productor"];
+
+            }
+        }
+
+        private void btnCalcularSacos_Click_2(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                double totalPeso = 0;
+                int totalSacos = 0;
+                foreach (DataGridViewRow item in dgvDetalleNotaPeso.Rows)
+                {
+                    totalPeso += Convert.ToDouble(item.Cells["ColPeso"].Value);
+                    totalSacos += Convert.ToInt32(item.Cells["ColSacos"].Value);
+                }
+
+                double pesoBruto = totalPeso / 100;
+                double tara = totalSacos * 0.005;
+                double descuentoHumedad = Convert.ToDouble(txtDescuento.Text.Trim());
+
+                double pesoNeto = pesoBruto - tara - descuentoHumedad;
+                double quintalOro = pesoNeto / 1.20;
+                double quintalOroLegal = pesoNeto / 1.25;
+                double precioUnitario = Convert.ToDouble(txtPrecioQ.Text);
+                double precioTotal = quintalOro * precioUnitario;
+                txtObservacion.Text = Convert.ToString(descuentoHumedad);
+
+                txtPesoBruto.Text = (pesoBruto.ToString());
+                txtTara.Text = (tara.ToString());
+                txtPesoNeto.Text = (pesoNeto.ToString());
+                txtQuintales.Text = (quintalOro.ToString());
+                txtQuitalesOroLegal.Text = (quintalOroLegal.ToString());
+                txtPrecioTotal.Text = (precioTotal.ToString());
+
+            }
+
+           
+
+
+
+
+
         }
     }
 }
