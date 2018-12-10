@@ -12,6 +12,7 @@ using DevExpress.XtraEditors;
 using CapaNegocio;
 using CapaEntidad;
 using CapaPresentacion.Formularios;
+using System.IO;
 
 
 
@@ -27,6 +28,10 @@ namespace CapaPresentacion.Formularios
 
         private Boolean Validar()
         {
+            
+
+            
+
             if (slueProductor.EditValue == null)
             {
                 slueProductor.ErrorText = "Seleccione el productor";
@@ -42,13 +47,13 @@ namespace CapaPresentacion.Formularios
                 slueLugar.ErrorText = "Seleccione un lugar";
                 return false;
             }
-
             if (String.IsNullOrEmpty(txtDescuento.EditValue.ToString().Trim()))
             {
                 txtDescuento.ErrorText = "Ingrese el descuento";
                 return false;
             }
-           
+
+
             if (String.IsNullOrEmpty(txtHumedad.EditValue.ToString().Trim()))
             {
                 txtHumedad.ErrorText = "Ingrese el porcentaje de humedad";
@@ -59,7 +64,16 @@ namespace CapaPresentacion.Formularios
                 txtPrecioQ.ErrorText = "Ingrese el precio por Quital";
                 return false;
             }
-            
+
+            if (dgvDetalleNotaPeso.Rows[0].Cells[0].Value == null)
+            {
+                XtraMessageBox.Show("Imposible calcular sin la cantidad de sacos y el peso.", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                dgvDetalleNotaPeso.Focus();
+                return false;
+            }
+
+
+
 
             return true;
 
@@ -67,6 +81,7 @@ namespace CapaPresentacion.Formularios
 
         private void Limpiar()
         {
+            deFecha.DateTime = DateTime.Today;
             txtNumeroFactura.EditValue = "";
             slueProductor.EditValue = null;
             slueCalidadCafe.EditValue = null;
@@ -81,7 +96,9 @@ namespace CapaPresentacion.Formularios
             txtQuintales.EditValue = "";
             txtQuitalesOroLegal.EditValue = "";
             txtPrecioTotal.EditValue = "";
-            dgvDetalleNotaPeso.DataSource = "";
+            dgvDetalleNotaPeso.Rows.Clear();
+            dgvDetalleNotaPeso.Rows.Add();
+            slueLugar.Enabled = false;
 
         }
 
@@ -92,6 +109,7 @@ namespace CapaPresentacion.Formularios
 
         private void FrmNotaPeso_Load(object sender, EventArgs e)
         {
+            Limpiar();
             LlenarCombobox();
             ListadoNotaPeso();
             HabilitarControles(true, false, false, true, true);
@@ -99,13 +117,19 @@ namespace CapaPresentacion.Formularios
 
         private void LlenarCombobox()
         {
-            
+
             slueProductor.Properties.DataSource = objNP.ListadoProductor().Tables["Productor"];
             slueCalidadCafe.Properties.DataSource = objNP.ListadoTipoCafe().Tables["TipoCafe"];
 
             CNUsuario objU = new CNUsuario();
             slueUsuario.Properties.DataSource = objU.ListadoUsuario().Tables["Usuario"];
-            
+
+            txtNumeroFactura.Text = objNP.ObtenerMaximoNotaPeso().Tables["NotaPeso"].Rows[0]["IdNotaPeso"].ToString();
+
+
+            slueUsuario.EditValue = Funciones.Funciones.idUsuario;
+
+
         }
 
         private Boolean GuardarDetallesNotaPeso()
@@ -149,15 +173,7 @@ namespace CapaPresentacion.Formularios
 
         
 
-        private void slueProductor_EditValueChanged(object sender, EventArgs e)
-        {
-            if(slueProductor.EditValue != null)
-            {
-                string idProductor = slueProductor.EditValue.ToString();
-                slueLugar.Properties.DataSource = objNP.ListarLugarXProductor(idProductor).Tables["Productor"];
-
-            }
-        }
+        
 
        
         private void btnCalcularSacos_Click(object sender, EventArgs e)
@@ -221,12 +237,63 @@ namespace CapaPresentacion.Formularios
 
         private void HabilitarControles(Boolean nuevo, Boolean guardar, Boolean cancelar, Boolean regresar, Boolean group)
         {
+
+            //FileStream file = new FileStream("rutaImagen.jpg", FileMode.Open);
+            //Image toLoad = Image.FromStream(file);
+            //button.Image = toLoad;
+
+            //pBxNuevo.Image = Image.FromFile(@"Recursos/guadar.png");
             pBxNuevo.Enabled = nuevo;
             
             pBxGuardar.Enabled = guardar;
             pBxCancelar.Enabled = cancelar;
             pBxRegresar.Enabled = regresar;
             gcDatosNotaPeso.Visible = group;
+
+            if (nuevo == true)
+            {
+                pBxNuevo.Image = imgLista.Images[0];
+            }
+            else
+            {
+                pBxNuevo.Image = imgLista.Images[1];
+            }
+
+            if (guardar == true)
+            {
+                pBxGuardar.Image = imgLista.Images[2];
+            }
+            else
+            {
+                pBxGuardar.Image = imgLista.Images[3];
+            }
+
+            //if (actualizar == true)
+            //{
+            //    pBxActualizar.Image = imgLista.Images[4];
+            //}
+            //else
+            //{
+            //    pBxActualizar.Image = imgLista.Images[5];
+            //}
+
+            if (cancelar == true)
+            {
+                pBxCancelar.Image = imgLista.Images[6];
+            }
+            else
+            {
+                pBxCancelar.Image = imgLista.Images[7];
+            }
+
+            if (regresar == true)
+            {
+                pBxRegresar.Image = imgLista.Images[8];
+            }
+            else
+            {
+                pBxRegresar.Image = imgLista.Images[9];
+            }
 
         }
 
@@ -304,7 +371,7 @@ namespace CapaPresentacion.Formularios
                     {
                         Limpiar();
                         // ListadoProductor();
-                        //HabilitarControles(true, false, false, false, true, false, true);
+                        HabilitarControles(true,false,false,false,true);
                         ListadoNotaPeso();
                         XtraMessageBox.Show("Registro almacenado satisfatoriamente", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -319,6 +386,7 @@ namespace CapaPresentacion.Formularios
         {
             if (slueProductor.EditValue != null)
             {
+                slueLugar.Enabled = true;
                 string idProductor = slueProductor.EditValue.ToString();
                 slueLugar.Properties.DataSource = objNP.ListarLugarXProductor(idProductor).Tables["Productor"];
 

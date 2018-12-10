@@ -321,17 +321,45 @@
 --execute Sp_Mostrar_Todo_NotaPeso
 
 
-CREATE PROCEDURE [dbo].[Sp_Actualizar_AnularNotaPeso]
-	@IdNotaPeso int,
-	@Anulada bit
-AS
-	BEGIN
-		SET NOCOUNT OFF
-		UPDATE NotaPeso
-		SET Anulada = @Anulada
-		WHERE IdNotaPeso = @IdNotaPeso
-	END
+--CREATE PROCEDURE [dbo].[Sp_Actualizar_AnularNotaPeso]
+--	@IdNotaPeso int,
+--	@Anulada bit
+--AS
+--	BEGIN
+--		SET NOCOUNT OFF
+--		UPDATE NotaPeso
+--		SET Anulada = @Anulada
+--		WHERE IdNotaPeso = @IdNotaPeso
+--	END
 
-GO
+--GO
 
-Execute Sp_Actualizar_AnularNotaPeso 1,1
+
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_MaximoNotaPeso]
+--AS
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT  MAX(IdNotaPeso) + 1 AS IdNotaPeso
+--		FROM NotaPeso 					
+--	END
+--GO
+
+
+
+
+
+
+----------------------------------------- PROCEDIMIENTOS ALMACENADOS LOGIN -----------------------------------------
+
+--CREATE PROCEDURE [dbo].[Sp_Login]
+--  @Usuario VARCHAR(20),
+--  @Contrasena VARCHAR(50)
+--AS
+--  BEGIN
+--  	  SET NOCOUNT ON
+--      SELECT * 
+--      FROM Usuario 
+--      WHERE Usuario = @Usuario AND Contrasena = @Contrasena AND Estado = 1
+--  END
+--GO
+

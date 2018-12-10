@@ -99,6 +99,12 @@
     <Compile Include="Formularios\FrmAuditoria.Designer.cs">
       <DependentUpon>FrmAuditoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLugar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +117,23 @@
     <Compile Include="Formularios\FrmNotaPeso.Designer.cs">
       <DependentUpon>FrmNotaPeso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmProductor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmProductor.Designer.cs">
       <DependentUpon>FrmProductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmSplash.Designer.cs">
+      <DependentUpon>FrmSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmUsuario.cs">
       <SubType>Form</SubType>
@@ -123,16 +141,14 @@
     <Compile Include="Formularios\FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\MDIMenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\MDIMenuPrincipal.Designer.cs">
-      <DependentUpon>MDIMenuPrincipal.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Funciones\Funciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmAuditoria.resx">
       <DependentUpon>FrmAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLugar.resx">
       <DependentUpon>FrmLugar.cs</DependentUpon>
@@ -140,14 +156,17 @@
     <EmbeddedResource Include="Formularios\FrmNotaPeso.resx">
       <DependentUpon>FrmNotaPeso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProductor.resx">
       <DependentUpon>FrmProductor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmSplash.resx">
+      <DependentUpon>FrmSplash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MDIMenuPrincipal.resx">
-      <DependentUpon>MDIMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -209,7 +228,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Funciones\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +258,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\inicio2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\hombre.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -49,5 +49,9 @@ namespace CapaNegocio
             return objNP.ListadoNotaPeso();
         }
 
+        public DataSet ObtenerMaximoNotaPeso()
+        {
+            return objNP.ObtenerMaximoNotaPeso();
+        }
     }
 }

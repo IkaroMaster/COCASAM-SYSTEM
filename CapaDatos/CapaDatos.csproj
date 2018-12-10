@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDLogin.cs" />
     <Compile Include="CDLugar.cs" />
     <Compile Include="CDNotaPeso.cs" />
     <Compile Include="CDProductor.cs" />

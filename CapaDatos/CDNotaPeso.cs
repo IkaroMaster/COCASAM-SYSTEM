@@ -213,5 +213,28 @@ namespace CapaDatos
                 ds.Dispose();
             }
         }
+
+        public DataSet ObtenerMaximoNotaPeso()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da;
+
+            try
+            {
+                ConectarBD();
+                da = new SqlDataAdapter("Sp_Mostrar_MaximoNotaPeso", cn);
+                da.Fill(ds, "NotaPeso");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el ultimo codigo de nota de peso", ex);
+            }
+            finally
+            {
+                CerrarBD();
+                ds.Dispose();
+            }
+        }
     }
 }
