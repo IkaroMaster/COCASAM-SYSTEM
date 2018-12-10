@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaNegocio;
 using CapaEntidad;
+using DevExpress.Utils.UI;
 
 namespace CapaPresentacion.Formularios
 {
@@ -154,6 +155,13 @@ namespace CapaPresentacion.Formularios
                     XtraMessageBox.Show("Error al actualizar el registro", "COCASAM", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void mostrarLugaresPorProductorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.rptProductorXLugar reporte = new CapaPresentacion.Reportes.rptProductorXLugar();
+            DevExpress.XtraReports.UI.ReportPrintTool viewer = new DevExpress.XtraReports.UI.ReportPrintTool(reporte);
+            viewer.ShowPreview();
         }
     }
 }

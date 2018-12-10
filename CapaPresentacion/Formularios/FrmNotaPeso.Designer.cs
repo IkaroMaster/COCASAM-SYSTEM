@@ -116,6 +116,7 @@
             this.Ca = new System.Windows.Forms.Label();
             this.cafeDBDataSet1 = new CapaPresentacion.CafeDBDataSet();
             this.imgLista = new System.Windows.Forms.ImageList(this.components);
+            this.imprimirNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -316,14 +317,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.anularToolStripMenuItem});
+            this.anularToolStripMenuItem,
+            this.imprimirNotaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // anularToolStripMenuItem
             // 
             this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
-            this.anularToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.anularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.anularToolStripMenuItem.Text = "Anular";
             this.anularToolStripMenuItem.Click += new System.EventHandler(this.anularToolStripMenuItem_Click);
             // 
@@ -1175,6 +1177,13 @@
             this.imgLista.Images.SetKeyName(8, "flecha.png");
             this.imgLista.Images.SetKeyName(9, "flechaOscuro.png");
             // 
+            // imprimirNotaToolStripMenuItem
+            // 
+            this.imprimirNotaToolStripMenuItem.Name = "imprimirNotaToolStripMenuItem";
+            this.imprimirNotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imprimirNotaToolStripMenuItem.Text = "Imprimir nota";
+            this.imprimirNotaToolStripMenuItem.Click += new System.EventHandler(this.imprimirNotaToolStripMenuItem_Click);
+            // 
             // FrmNotaPeso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1317,5 +1326,6 @@
         private CafeDBDataSet cafeDBDataSet1;
         private DevExpress.XtraEditors.TextEdit txtDescuento;
         private System.Windows.Forms.ImageList imgLista;
+        private System.Windows.Forms.ToolStripMenuItem imprimirNotaToolStripMenuItem;
     }
 }

@@ -432,5 +432,13 @@ namespace CapaPresentacion.Formularios
 
 
         }
+
+        private void imprimirNotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int idNota = int.Parse(gvDatosNotaPeso.GetRowCellValue(gvDatosNotaPeso.FocusedRowHandle, colIdNotaPeso).ToString());
+            Reportes.rptNotaPeso reporte = new Reportes.rptNotaPeso(idNota);
+            DevExpress.XtraReports.UI.ReportPrintTool viewer = new DevExpress.XtraReports.UI.ReportPrintTool(reporte);
+            viewer.ShowRibbonPreview();
+        }
     }
 }

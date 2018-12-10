@@ -55,6 +55,7 @@
             this.txtIdLugar = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtLugar = new DevExpress.XtraEditors.TextEdit();
+            this.mostrarLugaresPorProductorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gBxControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBxRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBxActualizar)).BeginInit();
@@ -247,21 +248,22 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.eliminarToolStripMenuItem,
+            this.mostrarLugaresPorProductorToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(234, 92);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -355,6 +357,13 @@
             this.txtLugar.Size = new System.Drawing.Size(277, 28);
             this.txtLugar.TabIndex = 173;
             // 
+            // mostrarLugaresPorProductorToolStripMenuItem
+            // 
+            this.mostrarLugaresPorProductorToolStripMenuItem.Name = "mostrarLugaresPorProductorToolStripMenuItem";
+            this.mostrarLugaresPorProductorToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.mostrarLugaresPorProductorToolStripMenuItem.Text = "Mostrar lugares por productor";
+            this.mostrarLugaresPorProductorToolStripMenuItem.Click += new System.EventHandler(this.mostrarLugaresPorProductorToolStripMenuItem_Click);
+            // 
             // FrmLugar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,5 +425,6 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarLugaresPorProductorToolStripMenuItem;
     }
 }

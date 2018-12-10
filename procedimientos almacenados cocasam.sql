@@ -379,3 +379,11 @@ AS
 		on pr.IdProductor = p.IdProductor
 		GROUP BY p.IdProductor, p.IdLugar, l.Lugar, pr.Nombre, pr.Apellido
 	END
+
+CREATE PROCEDURE [dbo].[Sp_Mostrar_MaximoNotaPeso]
+AS
+	BEGIN
+		SET NOCOUNT ON
+		SELECT  MAX(IdNotaPeso) + 1 AS IdNotaPeso
+		FROM NotaPeso
+	END
