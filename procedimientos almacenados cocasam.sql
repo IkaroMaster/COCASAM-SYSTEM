@@ -293,12 +293,12 @@
 --	END
 --GO
 
---CREATE PROCEDURE [dbo].[Sp_Mostrar_Todo_NotaPeso]
+--ALTER PROCEDURE [dbo].[Sp_Mostrar_Todo_NotaPeso]
 --AS
 --	BEGIN
 --		SET NOCOUNT ON
 --		SELECT  np.IdNotaPeso,CONCAT(p.Nombre, ' ', p.Apellido) AS NombreCompleto,l.Lugar,tc.TipoCafe,u.Usuario AS PesadoPor,
---				np.Fecha,SUM(dnp.Peso) AS TotalPeso,SUM(dnp.Saco) as TotalSaco,np.PesoBruto,np.Tara,np.Descuento,
+--				np.Fecha,SUM(dnp.Peso) AS TotalPeso,SUM(dnp.Saco) AS TotalSaco,np.PesoBruto,np.Tara,np.Descuento,
 --				(np.PesoBruto - np.Tara - Descuento) AS PesoNeto,((np.PesoBruto - np.Tara - Descuento)/ 1.25) AS QuintalOro,
 --				np.Observaciones,np.PrecioUnitario,((np.PesoBruto - np.Tara - Descuento)* np.PrecioUnitario) AS Total 
 --		FROM NotaPeso np inner join DetalleNotaPeso dnp
@@ -316,50 +316,66 @@
 --				np.Observaciones,np.PrecioUnitario
 							
 --	END
---GO
 
---execute Sp_Mostrar_Todo_NotaPeso
+----------------- PROCEDIMIENTOS ALMACENADOS REPORTES --------------------------------------------
 
-
---CREATE PROCEDURE [dbo].[Sp_Actualizar_AnularNotaPeso]
---	@IdNotaPeso int,
---	@Anulada bit
---AS
---	BEGIN
---		SET NOCOUNT OFF
---		UPDATE NotaPeso
---		SET Anulada = @Anulada
---		WHERE IdNotaPeso = @IdNotaPeso
---	END
-
---GO
-
-
---CREATE PROCEDURE [dbo].[Sp_Mostrar_MaximoNotaPeso]
+--ALTER PROCEDURE [dbo].[Sp_Mostrar_Rpt_NotaPeso]
 --AS
 --	BEGIN
 --		SET NOCOUNT ON
---		SELECT  MAX(IdNotaPeso) + 1 AS IdNotaPeso
---		FROM NotaPeso 					
+--		SELECT  np.IdNotaPeso,CONCAT(p.Nombre, ' ', p.Apellido) AS NombreCompleto,l.Lugar,tc.TipoCafe,u.Usuario AS PesadoPor,
+--				np.Fecha,dnp.Peso,dnp.Saco,np.PesoBruto,np.Tara,np.Descuento,
+--				(np.PesoBruto - np.Tara - Descuento) AS PesoNeto,((np.PesoBruto - np.Tara - Descuento)/ 1.25) AS QuintalOro,
+--				np.Observaciones,np.PrecioUnitario,((np.PesoBruto - np.Tara - Descuento)* np.PrecioUnitario) AS Total 
+--		FROM NotaPeso np inner join DetalleNotaPeso dnp
+--							on np.IdNotaPeso = dnp.IdNotaPeso
+--							inner join Productor p
+--							on np.IdProductor = p.IdProductor
+--							inner join TipoCafe tc
+--							on np.IdTipoCafe = tc.IdTipoCafe
+--							inner join Lugar l
+--							on np.IdLugar = l.IdLugar
+--							inner join Usuario u
+--							on np.IdUsuario = u.IdUsuario
+--		WHERE np.Anulada = 0
+--		GROUP BY np.IdNotaPeso,p.Nombre,p.Apellido,l.Lugar,tc.TipoCafe,u.Usuario,np.Fecha,np.PesoBruto,np.Tara,np.Descuento,
+--				np.Observaciones,np.PrecioUnitario, dnp.Peso, dnp.Saco
+							
 --	END
---GO
 
 
-
-
-
-
------------------------------------------ PROCEDIMIENTOS ALMACENADOS LOGIN -----------------------------------------
-
---CREATE PROCEDURE [dbo].[Sp_Login]
---  @Usuario VARCHAR(20),
---  @Contrasena VARCHAR(50)
+--CREATE PROCEDURE [dbo].[Sp_Mostrar_NotaPeso]
+--	@IdNota int
 --AS
---  BEGIN
---  	  SET NOCOUNT ON
---      SELECT * 
---      FROM Usuario 
---      WHERE Usuario = @Usuario AND Contrasena = @Contrasena AND Estado = 1
---  END
---GO
+--	BEGIN
+--		SET NOCOUNT ON
+--		SELECT  np.IdNotaPeso,CONCAT(p.Nombre, ' ', p.Apellido) AS NombreCompleto,l.Lugar,tc.TipoCafe,u.Usuario AS PesadoPor,
+--				np.Fecha,dnp.Peso,dnp.Saco,np.PesoBruto,np.Tara,np.Descuento,
+--				(np.PesoBruto - np.Tara - Descuento) AS PesoNeto,((np.PesoBruto - np.Tara - Descuento)/ 1.25) AS QuintalOro,
+--				np.Observaciones,np.PrecioUnitario,((np.PesoBruto - np.Tara - Descuento)* np.PrecioUnitario) AS Total 
+--		FROM NotaPeso np inner join DetalleNotaPeso dnp
+--							on np.IdNotaPeso = dnp.IdNotaPeso
+--							inner join Productor p
+--							on np.IdProductor = p.IdProductor
+--							inner join TipoCafe tc
+--							on np.IdTipoCafe = tc.IdTipoCafe
+--							inner join Lugar l
+--							on np.IdLugar = l.IdLugar
+--							inner join Usuario u
+--							on np.IdUsuario = u.IdUsuario
+--		WHERE np.Anulada = 0 and np.IdNotaPeso = @IdNota
+--		GROUP BY np.IdNotaPeso,p.Nombre,p.Apellido,l.Lugar,tc.TipoCafe,u.Usuario,np.Fecha,np.PesoBruto,np.Tara,np.Descuento,
+--				np.Observaciones,np.PrecioUnitario, dnp.Peso, dnp.Saco
+							
+--	END
 
+CREATE PROCEDURE [dbo].[Sp_Mostrar_RptLugarXProductor]
+AS
+	BEGIN
+		SET NOCOUNT ON
+		SELECT p.IdLugar, l.Lugar, CONCAT(pr.Nombre, ' ', pr.Apellido) AS NombreCompleto
+		FROM ProductorXLugar p inner join Lugar l
+		on p.IdLugar = l.IdLugar inner join Productor pr
+		on pr.IdProductor = p.IdProductor
+		GROUP BY p.IdProductor, p.IdLugar, l.Lugar, pr.Nombre, pr.Apellido
+	END

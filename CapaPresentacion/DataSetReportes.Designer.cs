@@ -20,17 +20,19 @@ namespace CapaPresentacion {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CafeDBDataSet2")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetReportes")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CafeDBDataSet2 : global::System.Data.DataSet {
+    public partial class DataSetReportes : global::System.Data.DataSet {
         
-        private Sp_Mostrar_SexoDataTable tableSp_Mostrar_Sexo;
+        private Sp_Mostrar_Todo_NotaPesoDataTable tableSp_Mostrar_Todo_NotaPeso;
+        
+        private Sp_Mostrar_RptLugarXProductorDataTable tableSp_Mostrar_RptLugarXProductor;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public CafeDBDataSet2() {
+        public DataSetReportes() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +43,7 @@ namespace CapaPresentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected CafeDBDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetReportes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +56,11 @@ namespace CapaPresentacion {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Sp_Mostrar_Sexo"] != null)) {
-                    base.Tables.Add(new Sp_Mostrar_SexoDataTable(ds.Tables["Sp_Mostrar_Sexo"]));
+                if ((ds.Tables["Sp_Mostrar_Todo_NotaPeso"] != null)) {
+                    base.Tables.Add(new Sp_Mostrar_Todo_NotaPesoDataTable(ds.Tables["Sp_Mostrar_Todo_NotaPeso"]));
+                }
+                if ((ds.Tables["Sp_Mostrar_RptLugarXProductor"] != null)) {
+                    base.Tables.Add(new Sp_Mostrar_RptLugarXProductorDataTable(ds.Tables["Sp_Mostrar_RptLugarXProductor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +84,19 @@ namespace CapaPresentacion {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Sp_Mostrar_SexoDataTable Sp_Mostrar_Sexo {
+        public Sp_Mostrar_Todo_NotaPesoDataTable Sp_Mostrar_Todo_NotaPeso {
             get {
-                return this.tableSp_Mostrar_Sexo;
+                return this.tableSp_Mostrar_Todo_NotaPeso;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Sp_Mostrar_RptLugarXProductorDataTable Sp_Mostrar_RptLugarXProductor {
+            get {
+                return this.tableSp_Mostrar_RptLugarXProductor;
             }
         }
         
@@ -127,7 +142,7 @@ namespace CapaPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CafeDBDataSet2 cln = ((CafeDBDataSet2)(base.Clone()));
+            DataSetReportes cln = ((DataSetReportes)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +167,11 @@ namespace CapaPresentacion {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Sp_Mostrar_Sexo"] != null)) {
-                    base.Tables.Add(new Sp_Mostrar_SexoDataTable(ds.Tables["Sp_Mostrar_Sexo"]));
+                if ((ds.Tables["Sp_Mostrar_Todo_NotaPeso"] != null)) {
+                    base.Tables.Add(new Sp_Mostrar_Todo_NotaPesoDataTable(ds.Tables["Sp_Mostrar_Todo_NotaPeso"]));
+                }
+                if ((ds.Tables["Sp_Mostrar_RptLugarXProductor"] != null)) {
+                    base.Tables.Add(new Sp_Mostrar_RptLugarXProductorDataTable(ds.Tables["Sp_Mostrar_RptLugarXProductor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +206,16 @@ namespace CapaPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSp_Mostrar_Sexo = ((Sp_Mostrar_SexoDataTable)(base.Tables["Sp_Mostrar_Sexo"]));
+            this.tableSp_Mostrar_Todo_NotaPeso = ((Sp_Mostrar_Todo_NotaPesoDataTable)(base.Tables["Sp_Mostrar_Todo_NotaPeso"]));
             if ((initTable == true)) {
-                if ((this.tableSp_Mostrar_Sexo != null)) {
-                    this.tableSp_Mostrar_Sexo.InitVars();
+                if ((this.tableSp_Mostrar_Todo_NotaPeso != null)) {
+                    this.tableSp_Mostrar_Todo_NotaPeso.InitVars();
+                }
+            }
+            this.tableSp_Mostrar_RptLugarXProductor = ((Sp_Mostrar_RptLugarXProductorDataTable)(base.Tables["Sp_Mostrar_RptLugarXProductor"]));
+            if ((initTable == true)) {
+                if ((this.tableSp_Mostrar_RptLugarXProductor != null)) {
+                    this.tableSp_Mostrar_RptLugarXProductor.InitVars();
                 }
             }
         }
@@ -199,18 +223,26 @@ namespace CapaPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CafeDBDataSet2";
+            this.DataSetName = "DataSetReportes";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CafeDBDataSet2.xsd";
+            this.Namespace = "http://tempuri.org/DataSetReportes.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSp_Mostrar_Sexo = new Sp_Mostrar_SexoDataTable();
-            base.Tables.Add(this.tableSp_Mostrar_Sexo);
+            this.tableSp_Mostrar_Todo_NotaPeso = new Sp_Mostrar_Todo_NotaPesoDataTable();
+            base.Tables.Add(this.tableSp_Mostrar_Todo_NotaPeso);
+            this.tableSp_Mostrar_RptLugarXProductor = new Sp_Mostrar_RptLugarXProductorDataTable();
+            base.Tables.Add(this.tableSp_Mostrar_RptLugarXProductor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeSp_Mostrar_Sexo() {
+        private bool ShouldSerializeSp_Mostrar_Todo_NotaPeso() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeSp_Mostrar_RptLugarXProductor() {
             return false;
         }
         
@@ -225,7 +257,7 @@ namespace CapaPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CafeDBDataSet2 ds = new CafeDBDataSet2();
+            DataSetReportes ds = new DataSetReportes();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +302,22 @@ namespace CapaPresentacion {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void Sp_Mostrar_SexoRowChangeEventHandler(object sender, Sp_Mostrar_SexoRowChangeEvent e);
+        public delegate void Sp_Mostrar_Todo_NotaPesoRowChangeEventHandler(object sender, Sp_Mostrar_Todo_NotaPesoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void Sp_Mostrar_RptLugarXProductorRowChangeEventHandler(object sender, Sp_Mostrar_RptLugarXProductorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Sp_Mostrar_SexoDataTable : global::System.Data.TypedTableBase<Sp_Mostrar_SexoRow> {
-            
-            private global::System.Data.DataColumn columnIdSexo;
-            
-            private global::System.Data.DataColumn columnSexo;
+        public partial class Sp_Mostrar_Todo_NotaPesoDataTable : global::System.Data.TypedTableBase<Sp_Mostrar_Todo_NotaPesoRow> {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoDataTable() {
-                this.TableName = "Sp_Mostrar_Sexo";
+            public Sp_Mostrar_Todo_NotaPesoDataTable() {
+                this.TableName = "Sp_Mostrar_Todo_NotaPeso";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +325,7 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Sp_Mostrar_SexoDataTable(global::System.Data.DataTable table) {
+            internal Sp_Mostrar_Todo_NotaPesoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,25 +342,9 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected Sp_Mostrar_SexoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Sp_Mostrar_Todo_NotaPesoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IdSexoColumn {
-                get {
-                    return this.columnIdSexo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SexoColumn {
-                get {
-                    return this.columnSexo;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -343,53 +358,44 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoRow this[int index] {
+            public Sp_Mostrar_Todo_NotaPesoRow this[int index] {
                 get {
-                    return ((Sp_Mostrar_SexoRow)(this.Rows[index]));
+                    return ((Sp_Mostrar_Todo_NotaPesoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sp_Mostrar_SexoRowChangeEventHandler Sp_Mostrar_SexoRowChanging;
+            public event Sp_Mostrar_Todo_NotaPesoRowChangeEventHandler Sp_Mostrar_Todo_NotaPesoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sp_Mostrar_SexoRowChangeEventHandler Sp_Mostrar_SexoRowChanged;
+            public event Sp_Mostrar_Todo_NotaPesoRowChangeEventHandler Sp_Mostrar_Todo_NotaPesoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sp_Mostrar_SexoRowChangeEventHandler Sp_Mostrar_SexoRowDeleting;
+            public event Sp_Mostrar_Todo_NotaPesoRowChangeEventHandler Sp_Mostrar_Todo_NotaPesoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Sp_Mostrar_SexoRowChangeEventHandler Sp_Mostrar_SexoRowDeleted;
+            public event Sp_Mostrar_Todo_NotaPesoRowChangeEventHandler Sp_Mostrar_Todo_NotaPesoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddSp_Mostrar_SexoRow(Sp_Mostrar_SexoRow row) {
+            public void AddSp_Mostrar_Todo_NotaPesoRow(Sp_Mostrar_Todo_NotaPesoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoRow AddSp_Mostrar_SexoRow(string Sexo) {
-                Sp_Mostrar_SexoRow rowSp_Mostrar_SexoRow = ((Sp_Mostrar_SexoRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Sexo};
-                rowSp_Mostrar_SexoRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSp_Mostrar_SexoRow);
-                return rowSp_Mostrar_SexoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoRow FindByIdSexo(int IdSexo) {
-                return ((Sp_Mostrar_SexoRow)(this.Rows.Find(new object[] {
-                            IdSexo})));
+            public Sp_Mostrar_Todo_NotaPesoRow AddSp_Mostrar_Todo_NotaPesoRow() {
+                Sp_Mostrar_Todo_NotaPesoRow rowSp_Mostrar_Todo_NotaPesoRow = ((Sp_Mostrar_Todo_NotaPesoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[0];
+                rowSp_Mostrar_Todo_NotaPesoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSp_Mostrar_Todo_NotaPesoRow);
+                return rowSp_Mostrar_Todo_NotaPesoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Sp_Mostrar_SexoDataTable cln = ((Sp_Mostrar_SexoDataTable)(base.Clone()));
+                Sp_Mostrar_Todo_NotaPesoDataTable cln = ((Sp_Mostrar_Todo_NotaPesoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,57 +403,43 @@ namespace CapaPresentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Sp_Mostrar_SexoDataTable();
+                return new Sp_Mostrar_Todo_NotaPesoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnIdSexo = base.Columns["IdSexo"];
-                this.columnSexo = base.Columns["Sexo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnIdSexo = new global::System.Data.DataColumn("IdSexo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdSexo);
-                this.columnSexo = new global::System.Data.DataColumn("Sexo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSexo);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdSexo}, true));
-                this.columnIdSexo.AutoIncrement = true;
-                this.columnIdSexo.AllowDBNull = false;
-                this.columnIdSexo.ReadOnly = true;
-                this.columnIdSexo.Unique = true;
-                this.columnSexo.AllowDBNull = false;
-                this.columnSexo.MaxLength = 9;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoRow NewSp_Mostrar_SexoRow() {
-                return ((Sp_Mostrar_SexoRow)(this.NewRow()));
+            public Sp_Mostrar_Todo_NotaPesoRow NewSp_Mostrar_Todo_NotaPesoRow() {
+                return ((Sp_Mostrar_Todo_NotaPesoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Sp_Mostrar_SexoRow(builder);
+                return new Sp_Mostrar_Todo_NotaPesoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Sp_Mostrar_SexoRow);
+                return typeof(Sp_Mostrar_Todo_NotaPesoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Sp_Mostrar_SexoRowChanged != null)) {
-                    this.Sp_Mostrar_SexoRowChanged(this, new Sp_Mostrar_SexoRowChangeEvent(((Sp_Mostrar_SexoRow)(e.Row)), e.Action));
+                if ((this.Sp_Mostrar_Todo_NotaPesoRowChanged != null)) {
+                    this.Sp_Mostrar_Todo_NotaPesoRowChanged(this, new Sp_Mostrar_Todo_NotaPesoRowChangeEvent(((Sp_Mostrar_Todo_NotaPesoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -455,8 +447,8 @@ namespace CapaPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Sp_Mostrar_SexoRowChanging != null)) {
-                    this.Sp_Mostrar_SexoRowChanging(this, new Sp_Mostrar_SexoRowChangeEvent(((Sp_Mostrar_SexoRow)(e.Row)), e.Action));
+                if ((this.Sp_Mostrar_Todo_NotaPesoRowChanging != null)) {
+                    this.Sp_Mostrar_Todo_NotaPesoRowChanging(this, new Sp_Mostrar_Todo_NotaPesoRowChangeEvent(((Sp_Mostrar_Todo_NotaPesoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -464,8 +456,8 @@ namespace CapaPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Sp_Mostrar_SexoRowDeleted != null)) {
-                    this.Sp_Mostrar_SexoRowDeleted(this, new Sp_Mostrar_SexoRowChangeEvent(((Sp_Mostrar_SexoRow)(e.Row)), e.Action));
+                if ((this.Sp_Mostrar_Todo_NotaPesoRowDeleted != null)) {
+                    this.Sp_Mostrar_Todo_NotaPesoRowDeleted(this, new Sp_Mostrar_Todo_NotaPesoRowChangeEvent(((Sp_Mostrar_Todo_NotaPesoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -473,14 +465,14 @@ namespace CapaPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Sp_Mostrar_SexoRowDeleting != null)) {
-                    this.Sp_Mostrar_SexoRowDeleting(this, new Sp_Mostrar_SexoRowChangeEvent(((Sp_Mostrar_SexoRow)(e.Row)), e.Action));
+                if ((this.Sp_Mostrar_Todo_NotaPesoRowDeleting != null)) {
+                    this.Sp_Mostrar_Todo_NotaPesoRowDeleting(this, new Sp_Mostrar_Todo_NotaPesoRowChangeEvent(((Sp_Mostrar_Todo_NotaPesoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveSp_Mostrar_SexoRow(Sp_Mostrar_SexoRow row) {
+            public void RemoveSp_Mostrar_Todo_NotaPesoRow(Sp_Mostrar_Todo_NotaPesoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -489,7 +481,7 @@ namespace CapaPresentacion {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CafeDBDataSet2 ds = new CafeDBDataSet2();
+                DataSetReportes ds = new DataSetReportes();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -507,7 +499,240 @@ namespace CapaPresentacion {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Sp_Mostrar_SexoDataTable";
+                attribute2.FixedValue = "Sp_Mostrar_Todo_NotaPesoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Sp_Mostrar_RptLugarXProductorDataTable : global::System.Data.TypedTableBase<Sp_Mostrar_RptLugarXProductorRow> {
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Sp_Mostrar_RptLugarXProductorDataTable() {
+                this.TableName = "Sp_Mostrar_RptLugarXProductor";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Sp_Mostrar_RptLugarXProductorDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected Sp_Mostrar_RptLugarXProductorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Sp_Mostrar_RptLugarXProductorRow this[int index] {
+                get {
+                    return ((Sp_Mostrar_RptLugarXProductorRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Sp_Mostrar_RptLugarXProductorRowChangeEventHandler Sp_Mostrar_RptLugarXProductorRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Sp_Mostrar_RptLugarXProductorRowChangeEventHandler Sp_Mostrar_RptLugarXProductorRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Sp_Mostrar_RptLugarXProductorRowChangeEventHandler Sp_Mostrar_RptLugarXProductorRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Sp_Mostrar_RptLugarXProductorRowChangeEventHandler Sp_Mostrar_RptLugarXProductorRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddSp_Mostrar_RptLugarXProductorRow(Sp_Mostrar_RptLugarXProductorRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Sp_Mostrar_RptLugarXProductorRow AddSp_Mostrar_RptLugarXProductorRow() {
+                Sp_Mostrar_RptLugarXProductorRow rowSp_Mostrar_RptLugarXProductorRow = ((Sp_Mostrar_RptLugarXProductorRow)(this.NewRow()));
+                object[] columnValuesArray = new object[0];
+                rowSp_Mostrar_RptLugarXProductorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSp_Mostrar_RptLugarXProductorRow);
+                return rowSp_Mostrar_RptLugarXProductorRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Sp_Mostrar_RptLugarXProductorDataTable cln = ((Sp_Mostrar_RptLugarXProductorDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Sp_Mostrar_RptLugarXProductorDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Sp_Mostrar_RptLugarXProductorRow NewSp_Mostrar_RptLugarXProductorRow() {
+                return ((Sp_Mostrar_RptLugarXProductorRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Sp_Mostrar_RptLugarXProductorRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Sp_Mostrar_RptLugarXProductorRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Sp_Mostrar_RptLugarXProductorRowChanged != null)) {
+                    this.Sp_Mostrar_RptLugarXProductorRowChanged(this, new Sp_Mostrar_RptLugarXProductorRowChangeEvent(((Sp_Mostrar_RptLugarXProductorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Sp_Mostrar_RptLugarXProductorRowChanging != null)) {
+                    this.Sp_Mostrar_RptLugarXProductorRowChanging(this, new Sp_Mostrar_RptLugarXProductorRowChangeEvent(((Sp_Mostrar_RptLugarXProductorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Sp_Mostrar_RptLugarXProductorRowDeleted != null)) {
+                    this.Sp_Mostrar_RptLugarXProductorRowDeleted(this, new Sp_Mostrar_RptLugarXProductorRowChangeEvent(((Sp_Mostrar_RptLugarXProductorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Sp_Mostrar_RptLugarXProductorRowDeleting != null)) {
+                    this.Sp_Mostrar_RptLugarXProductorRowDeleting(this, new Sp_Mostrar_RptLugarXProductorRowChangeEvent(((Sp_Mostrar_RptLugarXProductorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveSp_Mostrar_RptLugarXProductorRow(Sp_Mostrar_RptLugarXProductorRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetReportes ds = new DataSetReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Sp_Mostrar_RptLugarXProductorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -551,36 +776,63 @@ namespace CapaPresentacion {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Sp_Mostrar_SexoRow : global::System.Data.DataRow {
+        public partial class Sp_Mostrar_Todo_NotaPesoRow : global::System.Data.DataRow {
             
-            private Sp_Mostrar_SexoDataTable tableSp_Mostrar_Sexo;
+            private Sp_Mostrar_Todo_NotaPesoDataTable tableSp_Mostrar_Todo_NotaPeso;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Sp_Mostrar_SexoRow(global::System.Data.DataRowBuilder rb) : 
+            internal Sp_Mostrar_Todo_NotaPesoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSp_Mostrar_Sexo = ((Sp_Mostrar_SexoDataTable)(this.Table));
+                this.tableSp_Mostrar_Todo_NotaPeso = ((Sp_Mostrar_Todo_NotaPesoDataTable)(this.Table));
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Sp_Mostrar_RptLugarXProductorRow : global::System.Data.DataRow {
+            
+            private Sp_Mostrar_RptLugarXProductorDataTable tableSp_Mostrar_RptLugarXProductor;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Sp_Mostrar_RptLugarXProductorRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSp_Mostrar_RptLugarXProductor = ((Sp_Mostrar_RptLugarXProductorDataTable)(this.Table));
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class Sp_Mostrar_Todo_NotaPesoRowChangeEvent : global::System.EventArgs {
+            
+            private Sp_Mostrar_Todo_NotaPesoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Sp_Mostrar_Todo_NotaPesoRowChangeEvent(Sp_Mostrar_Todo_NotaPesoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int IdSexo {
+            public Sp_Mostrar_Todo_NotaPesoRow Row {
                 get {
-                    return ((int)(this[this.tableSp_Mostrar_Sexo.IdSexoColumn]));
-                }
-                set {
-                    this[this.tableSp_Mostrar_Sexo.IdSexoColumn] = value;
+                    return this.eventRow;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Sexo {
+            public global::System.Data.DataRowAction Action {
                 get {
-                    return ((string)(this[this.tableSp_Mostrar_Sexo.SexoColumn]));
-                }
-                set {
-                    this[this.tableSp_Mostrar_Sexo.SexoColumn] = value;
+                    return this.eventAction;
                 }
             }
         }
@@ -589,22 +841,22 @@ namespace CapaPresentacion {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class Sp_Mostrar_SexoRowChangeEvent : global::System.EventArgs {
+        public class Sp_Mostrar_RptLugarXProductorRowChangeEvent : global::System.EventArgs {
             
-            private Sp_Mostrar_SexoRow eventRow;
+            private Sp_Mostrar_RptLugarXProductorRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoRowChangeEvent(Sp_Mostrar_SexoRow row, global::System.Data.DataRowAction action) {
+            public Sp_Mostrar_RptLugarXProductorRowChangeEvent(Sp_Mostrar_RptLugarXProductorRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Sp_Mostrar_SexoRow Row {
+            public Sp_Mostrar_RptLugarXProductorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -620,7 +872,7 @@ namespace CapaPresentacion {
         }
     }
 }
-namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
+namespace CapaPresentacion.DataSetReportesTableAdapters {
     
     
     /// <summary>
@@ -632,7 +884,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Sp_Mostrar_SexoTableAdapter : global::System.ComponentModel.Component {
+    public partial class Sp_Mostrar_Todo_NotaPesoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -646,7 +898,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Sp_Mostrar_SexoTableAdapter() {
+        public Sp_Mostrar_Todo_NotaPesoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -741,12 +993,211 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Sp_Mostrar_Sexo";
-            tableMapping.ColumnMappings.Add("IdSexo", "IdSexo");
-            tableMapping.ColumnMappings.Add("Sexo", "Sexo");
-            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CapaPresentacion.Properties.Settings.Default.CafeDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Sp_Mostrar_Todo_NotaPeso";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.Sp_Mostrar_NotaPeso";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdNota", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable dataTable = new DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillById(DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable dataTable, global::System.Nullable<int> IdNota) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((IdNota.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdNota.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable GetDataById(global::System.Nullable<int> IdNota) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((IdNota.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdNota.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable dataTable = new DataSetReportes.Sp_Mostrar_Todo_NotaPesoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Sp_Mostrar_RptLugarXProductorTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public Sp_Mostrar_RptLugarXProductorTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -762,7 +1213,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.Sp_Mostrar_Sexo";
+            this._commandCollection[0].CommandText = "dbo.Sp_Mostrar_RptLugarXProductor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -771,7 +1222,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CafeDBDataSet2.Sp_Mostrar_SexoDataTable dataTable) {
+        public virtual int Fill(DataSetReportes.Sp_Mostrar_RptLugarXProductorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -784,104 +1235,11 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CafeDBDataSet2.Sp_Mostrar_SexoDataTable GetData() {
+        public virtual DataSetReportes.Sp_Mostrar_RptLugarXProductorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CafeDBDataSet2.Sp_Mostrar_SexoDataTable dataTable = new CafeDBDataSet2.Sp_Mostrar_SexoDataTable();
+            DataSetReportes.Sp_Mostrar_RptLugarXProductorDataTable dataTable = new DataSetReportes.Sp_Mostrar_RptLugarXProductorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.IDbCommand[] _commandCollection;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.IDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::CapaPresentacion.Properties.Settings.Default.CafeDBConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.Sp_Guardar_Productor";
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProductor", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Apellido", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSexo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Socio", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Sp_Guardar_Productor(string IdProductor, string Nombre, string Apellido, global::System.Nullable<int> IdSexo, global::System.Nullable<bool> Socio) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
-            if ((IdProductor == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(IdProductor));
-            }
-            if ((Nombre == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Nombre));
-            }
-            if ((Apellido == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(Apellido));
-            }
-            if ((IdSexo.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(IdSexo.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Socio.HasValue == true)) {
-                command.Parameters[5].Value = ((bool)(Socio.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
@@ -953,7 +1311,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(CafeDBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetReportes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -963,7 +1321,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(CafeDBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetReportes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -973,7 +1331,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(CafeDBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetReportes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1007,7 +1365,7 @@ namespace CapaPresentacion.CafeDBDataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(CafeDBDataSet2 dataSet) {
+        public virtual int UpdateAll(DataSetReportes dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
