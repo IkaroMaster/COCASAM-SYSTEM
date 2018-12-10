@@ -389,5 +389,12 @@ namespace CapaPresentacion.Formularios
         {
 
         }
+
+        private void totalDeCafeRecibidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.rptCafeRecibido reporte = new CapaPresentacion.Reportes.rptCafeRecibido();
+            DevExpress.XtraReports.UI.ReportPrintTool viewer = new DevExpress.XtraReports.UI.ReportPrintTool(reporte);
+            viewer.ShowPreview();
+        }
     }
 }

@@ -85,6 +85,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalDeCafeRecibidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBxControles.SuspendLayout();
@@ -457,22 +458,23 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarStripMenuItem1,
-            this.eliminarStripMenuItem1});
+            this.eliminarStripMenuItem1,
+            this.totalDeCafeRecibidoToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 92);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editarStripMenuItem1
             // 
             this.editarStripMenuItem1.Name = "editarStripMenuItem1";
-            this.editarStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.editarStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.editarStripMenuItem1.Text = "editar";
             this.editarStripMenuItem1.Click += new System.EventHandler(this.editarStripMenuItem1_Click);
             // 
             // eliminarStripMenuItem1
             // 
             this.eliminarStripMenuItem1.Name = "eliminarStripMenuItem1";
-            this.eliminarStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.eliminarStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.eliminarStripMenuItem1.Text = "eliminar";
             this.eliminarStripMenuItem1.Click += new System.EventHandler(this.eliminarStripMenuItem1_Click);
             // 
@@ -631,6 +633,13 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar ";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
+            // totalDeCafeRecibidoToolStripMenuItem
+            // 
+            this.totalDeCafeRecibidoToolStripMenuItem.Name = "totalDeCafeRecibidoToolStripMenuItem";
+            this.totalDeCafeRecibidoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.totalDeCafeRecibidoToolStripMenuItem.Text = "Total de cafe recibido";
+            this.totalDeCafeRecibidoToolStripMenuItem.Click += new System.EventHandler(this.totalDeCafeRecibidoToolStripMenuItem_Click);
+            // 
             // FrmProductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -739,5 +748,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdLugar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ToolStripMenuItem totalDeCafeRecibidoToolStripMenuItem;
     }
 }
