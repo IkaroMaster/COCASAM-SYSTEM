@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace CapaPresentacion.Reportes
 {
-    public partial class RptProductorXLugar : DevExpress.XtraReports.UI.XtraReport
+    public partial class rptProductorXLugar : DevExpress.XtraReports.UI.XtraReport
     {
-        public RptProductorXLugar()
+        public rptProductorXLugar()
         {
             InitializeComponent();
         }

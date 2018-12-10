@@ -159,6 +159,12 @@
     <Compile Include="Reportes\rptFactura.Designer.cs">
       <DependentUpon>rptFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\RptProductorXLugar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptProductorXLugar.Designer.cs">
+      <DependentUpon>RptProductorXLugar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\FrmAuditoria.resx">
       <DependentUpon>FrmAuditoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="Reportes\rptFactura.resx">
       <DependentUpon>rptFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptProductorXLugar.resx">
+      <DependentUpon>RptProductorXLugar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CafeDBDataSet.xsc">
       <DependentUpon>CafeDBDataSet.xsd</DependentUpon>
